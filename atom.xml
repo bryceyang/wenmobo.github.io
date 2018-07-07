@@ -5,9 +5,9 @@
   <subtitle>To strive, to seek, to find, and not to yield</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="blogwenbo.com/"/>
+  <link href="http://blogwenbo.com/"/>
   <updated>2018-07-07T08:05:41.286Z</updated>
-  <id>blogwenbo.com/</id>
+  <id>http://blogwenbo.com/</id>
   
   <author>
     <name>Mr.Wen</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="blogwenbo.com/2018/07/07/hello-world/"/>
-    <id>blogwenbo.com/2018/07/07/hello-world/</id>
+    <link href="http://blogwenbo.com/2018/07/07/hello-world/"/>
+    <id>http://blogwenbo.com/2018/07/07/hello-world/</id>
     <published>2018-07-07T05:42:25.557Z</published>
     <updated>2018-07-07T08:05:41.286Z</updated>
     
