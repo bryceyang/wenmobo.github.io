@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blogwenbo.com/"/>
-  <updated>2018-07-08T04:03:16.299Z</updated>
+  <updated>2018-07-08T09:03:10.145Z</updated>
   <id>http://blogwenbo.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Xcode无线真机调试</title>
+    <link href="http://blogwenbo.com/2018/07/08/Xcode%E6%97%A0%E7%BA%BF%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/"/>
+    <id>http://blogwenbo.com/2018/07/08/Xcode无线真机调试/</id>
+    <published>2018-07-08T08:58:29.000Z</published>
+    <updated>2018-07-08T09:03:10.145Z</updated>
+    
+    <content type="html"><![CDATA[<p class="description"></p><a id="more"></a><h3 id="一、硬性条件"><a href="#一、硬性条件" class="headerlink" title="一、硬性条件"></a>一、硬性条件</h3><ul><li>硬件环境<br>MAC、Xcode9</li><li>系统<br>Mac OSX 10.12.5、iOS11<h3 id="二、具体操作步骤"><a href="#二、具体操作步骤" class="headerlink" title="二、具体操作步骤"></a>二、具体操作步骤</h3></li><li>将手机用数据线连接到MAC，Xcode-&gt;Devices And Simulators-&gt;Devices中勾选<strong>connect via network</strong><br><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e852cb5e36b84?w=1240&amp;h=871&amp;f=png&amp;s=181947" alt="屏幕快照 2018-06-05 下午10.40.47.png"></li><li>点击手机图标，鼠标右键，配置局域网Connect via IP Address<br><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e852cba4f9aa5?w=1240&amp;h=865&amp;f=png&amp;s=147034" alt="屏幕快照 2018-06-05 下午10.44.35.png"></li><li>配置完成之后手机图标会有一个地球标志，带表已经连接成功</li><li>最后运行项目，就可以无线调试啦</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      看到安卓的小伙伴都能用无线调试APP，好生羡慕，为什么Xcode不支持无线调试呢，索性自己也在Google上搜一搜发现Xcode9是支持无线调试的，虽然自己平时也不怎用，还是做下记录吧。
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
+    
+      <category term="LLDB" scheme="http://blogwenbo.com/tags/LLDB/"/>
+    
+      <category term="Xcode" scheme="http://blogwenbo.com/tags/Xcode/"/>
+    
+      <category term="iPhone" scheme="http://blogwenbo.com/tags/iPhone/"/>
+    
+  </entry>
   
   <entry>
     <title>iOS定位处理约束冲突</title>
@@ -38,11 +66,11 @@
     
       <category term="Chisel" scheme="http://blogwenbo.com/tags/Chisel/"/>
     
+      <category term="Xcode" scheme="http://blogwenbo.com/tags/Xcode/"/>
+    
       <category term="Objective-C" scheme="http://blogwenbo.com/tags/Objective-C/"/>
     
       <category term="Swift" scheme="http://blogwenbo.com/tags/Swift/"/>
-    
-      <category term="Xcode" scheme="http://blogwenbo.com/tags/Xcode/"/>
     
   </entry>
   

@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="iOS,LLDB,Terminal,Chisel," />
+  <meta name="keywords" content="iOS,LLDB,Xcode,iPhone," />
 
 
 
@@ -101,18 +101,21 @@
 
 
 
-<meta name="description" content="在我查阅如何定位视图约束冲突相关博客资料的时候，了解到了**Facebook**开源的这款LLDB调试工具，通过Chisel可以轻松的找到约束有冲突的视图，自己以前只接触过Xcode自带LLDB工具，用的也不算太多，通过阅读相关文档，发现**Chisel**有很多实用的功能，比如说打印视图层级关系，通过命令添加断点，打印对象继承关系，预览打开UIImage、CGImageRef图片，显示隐藏视图或">
-<meta name="keywords" content="iOS,LLDB,Terminal,Chisel">
+<meta name="description" content="看到安卓的小伙伴都能用无线调试APP，好生羡慕，为什么Xcode不支持无线调试呢，索性自己也在Google上搜一搜发现Xcode9是支持无线调试的，虽然自己平时也不怎用，还是做下记录吧。">
+<meta name="keywords" content="iOS,LLDB,Xcode,iPhone">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chisel-LLDB调试助手">
-<meta property="og:url" content="http://blogwenbo.com/2018/07/08/Chisel-LLDB调试助手/index.html">
+<meta property="og:title" content="Xcode无线真机调试">
+<meta property="og:url" content="http://blogwenbo.com/2018/07/08/Xcode无线真机调试/index.html">
 <meta property="og:site_name" content="Mr.Wen">
-<meta property="og:description" content="在我查阅如何定位视图约束冲突相关博客资料的时候，了解到了**Facebook**开源的这款LLDB调试工具，通过Chisel可以轻松的找到约束有冲突的视图，自己以前只接触过Xcode自带LLDB工具，用的也不算太多，通过阅读相关文档，发现**Chisel**有很多实用的功能，比如说打印视图层级关系，通过命令添加断点，打印对象继承关系，预览打开UIImage、CGImageRef图片，显示隐藏视图或">
+<meta property="og:description" content="看到安卓的小伙伴都能用无线调试APP，好生羡慕，为什么Xcode不支持无线调试呢，索性自己也在Google上搜一搜发现Xcode9是支持无线调试的，虽然自己平时也不怎用，还是做下记录吧。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-08T04:02:50.619Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e852cb5e36b84?w=1240&h=871&f=png&s=181947">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e852cba4f9aa5?w=1240&h=865&f=png&s=147034">
+<meta property="og:updated_time" content="2018-07-08T09:03:10.145Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chisel-LLDB调试助手">
-<meta name="twitter:description" content="在我查阅如何定位视图约束冲突相关博客资料的时候，了解到了**Facebook**开源的这款LLDB调试工具，通过Chisel可以轻松的找到约束有冲突的视图，自己以前只接触过Xcode自带LLDB工具，用的也不算太多，通过阅读相关文档，发现**Chisel**有很多实用的功能，比如说打印视图层级关系，通过命令添加断点，打印对象继承关系，预览打开UIImage、CGImageRef图片，显示隐藏视图或">
+<meta name="twitter:title" content="Xcode无线真机调试">
+<meta name="twitter:description" content="看到安卓的小伙伴都能用无线调试APP，好生羡慕，为什么Xcode不支持无线调试呢，索性自己也在Google上搜一搜发现Xcode9是支持无线调试的，虽然自己平时也不怎用，还是做下记录吧。">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e852cb5e36b84?w=1240&h=871&f=png&s=181947">
 
 
 
@@ -142,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://blogwenbo.com/2018/07/08/Chisel-LLDB调试助手/"/>
+  <link rel="canonical" href="http://blogwenbo.com/2018/07/08/Xcode无线真机调试/"/>
 
 
 
 
 
-  <title>Chisel-LLDB调试助手 | Mr.Wen</title>
+  <title>Xcode无线真机调试 | Mr.Wen</title>
   
 
 
@@ -329,7 +332,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blogwenbo.com/2018/07/08/Chisel-LLDB调试助手/">
+    <link itemprop="mainEntityOfPage" href="http://blogwenbo.com/2018/07/08/Xcode无线真机调试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Wen">
@@ -346,7 +349,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Chisel-LLDB调试助手</h1>
+          <h1 class="post-title" itemprop="name headline">Xcode无线真机调试</h1>
         
 
         <div class="post-meta">
@@ -358,7 +361,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-08T11:52:01+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-08T16:58:29+08:00">
                 2018-07-08
               </time>
             
@@ -398,7 +401,7 @@
 
           
           
-             <span id="/2018/07/08/Chisel-LLDB调试助手/" class="leancloud_visitors" data-flag-title="Chisel-LLDB调试助手">
+             <span id="/2018/07/08/Xcode无线真机调试/" class="leancloud_visitors" data-flag-title="Xcode无线真机调试">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -423,7 +426,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  409
+                  106
                 </span>
               
 
@@ -439,7 +442,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -447,7 +450,7 @@
 
           
               <div class="post-description">
-                  在我查阅如何定位视图约束冲突相关博客资料的时候，了解到了**Facebook**开源的这款LLDB调试工具，通过Chisel可以轻松的找到约束有冲突的视图，自己以前只接触过Xcode自带LLDB工具，用的也不算太多，通过阅读相关文档，发现**Chisel**有很多实用的功能，比如说打印视图层级关系，通过命令添加断点，打印对象继承关系，预览打开UIImage、CGImageRef图片，显示隐藏视图或layer等等
+                  看到安卓的小伙伴都能用无线调试APP，好生羡慕，为什么Xcode不支持无线调试呢，索性自己也在Google上搜一搜发现Xcode9是支持无线调试的，虽然自己平时也不怎用，还是做下记录吧。
               </div>
           
 
@@ -467,123 +470,14 @@
         <p class="description"></p>
 
 <a id="more"></a>
-<blockquote>
-<p>Chisel is a collection of LLDB commands to assist debugging iOS apps.</p>
-</blockquote>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><blockquote>
-<ul>
-<li>GitHub地址</li>
-<li>安装</li>
-<li>常用常用Commands</li>
-<li>推荐博客</li>
+<h3 id="一、硬性条件"><a href="#一、硬性条件" class="headerlink" title="一、硬性条件"></a>一、硬性条件</h3><ul>
+<li>硬件环境<br>MAC、Xcode9</li>
+<li>系统<br>Mac OSX 10.12.5、iOS11<h3 id="二、具体操作步骤"><a href="#二、具体操作步骤" class="headerlink" title="二、具体操作步骤"></a>二、具体操作步骤</h3></li>
+<li>将手机用数据线连接到MAC，Xcode-&gt;Devices And Simulators-&gt;Devices中勾选<strong>connect via network</strong><br><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e852cb5e36b84?w=1240&amp;h=871&amp;f=png&amp;s=181947" alt="屏幕快照 2018-06-05 下午10.40.47.png"></li>
+<li>点击手机图标，鼠标右键，配置局域网Connect via IP Address<br><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e852cba4f9aa5?w=1240&amp;h=865&amp;f=png&amp;s=147034" alt="屏幕快照 2018-06-05 下午10.44.35.png"></li>
+<li>配置完成之后手机图标会有一个地球标志，带表已经连接成功</li>
+<li>最后运行项目，就可以无线调试啦</li>
 </ul>
-</blockquote>
-<h3 id="一、GitHub地址"><a href="#一、GitHub地址" class="headerlink" title="一、GitHub地址"></a>一、GitHub地址</h3><p><a href="https://github.com/facebook/chisel" target="_blank" rel="noopener">Chisel</a></p>
-<h3 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h3><ul>
-<li>未安装Homrebrew，先安装Homrebrew<br>参考<a href="https://www.jianshu.com/p/c60789934af1" target="_blank" rel="noopener">MAC上Homebrew常用命令</a></li>
-<li><p>安装Chisel</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install chisel</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果没有创建<strong>.lldbinit</strong>文件，则在终端创建文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch .lldbinit </span><br><span class="line">//open .lldbinit</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编辑<strong>.lldbinit</strong>文件，并添加以下内容<code>command script import /usr/local/opt/chisel/libexec/fblldb.py</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim .lldbinit</span><br><span class="line"></span><br><span class="line">//添加以下内容</span><br><span class="line"># ~/.lldbinit</span><br><span class="line">...</span><br><span class="line">command script import /path/to/fblldb.py</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>最后wq保存，重启Xcode，就可以使用Chisel了。</p>
-<h3 id="三、常用Commands"><a href="#三、常用Commands" class="headerlink" title="三、常用Commands"></a>三、常用Commands</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:left">命令描述</th>
-<th style="text-align:left">iOS</th>
-<th style="text-align:left">OS X</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">pviews</td>
-<td style="text-align:left">Print the recursive view description for the key window.</td>
-<td style="text-align:left">YES</td>
-<td style="text-align:left">YES</td>
-</tr>
-<tr>
-<td style="text-align:left">pvc</td>
-<td style="text-align:left">Print the recursive view controller description for the key window.</td>
-<td style="text-align:left">YES</td>
-<td style="text-align:left">NO</td>
-</tr>
-<tr>
-<td style="text-align:left">visualize</td>
-<td style="text-align:left">Open a UIImage, CGImageRef, UIView, CALayer, NSData (of an image), UIColor, CIColor, or CGColorRef in Preview.app on your Mac.</td>
-<td style="text-align:left">YES</td>
-<td style="text-align:left">NO</td>
-</tr>
-<tr>
-<td style="text-align:left">fv</td>
-<td style="text-align:left">Find a view in the hierarchy whose class name matches the provided regex.</td>
-<td style="text-align:left">YES</td>
-<td style="text-align:left">NO</td>
-</tr>
-<tr>
-<td style="text-align:left">fvc</td>
-<td style="text-align:left">Find a view controller in the hierarchy whose class name matches the provided regex.</td>
-<td style="text-align:left">YES</td>
-<td style="text-align:left">NO</td>
-</tr>
-<tr>
-<td style="text-align:left">show/hide</td>
-<td style="text-align:left">Show or hide the given view or layer. You don’t even have to continue the process to see the changes!</td>
-<td style="text-align:left">YES</td>
-<td style="text-align:left">YES</td>
-</tr>
-<tr>
-<td style="text-align:left">mask/unmask</td>
-<td style="text-align:left">Overlay a view or layer with a transparent rectangle to visualize where it is.</td>
-<td style="text-align:left">YES</td>
-<td style="text-align:left">NO</td>
-</tr>
-<tr>
-<td style="text-align:left">border/unborder</td>
-<td style="text-align:left">Add a border to a view or layer to visualize where it is.</td>
-<td style="text-align:left">YES</td>
-<td style="text-align:left">YES</td>
-</tr>
-<tr>
-<td style="text-align:left">caflush</td>
-<td style="text-align:left">Flush the render server (equivalent to a “repaint” if no animations are in-flight).</td>
-<td style="text-align:left">YES</td>
-<td style="text-align:left">YES</td>
-</tr>
-<tr>
-<td style="text-align:left">bmessage</td>
-<td style="text-align:left">Set a symbolic breakpoint on the method of a class or the method of an instance without worrying which class in the hierarchy actually implements the method.</td>
-<td style="text-align:left">YES</td>
-<td style="text-align:left">YES</td>
-</tr>
-<tr>
-<td style="text-align:left">wivar</td>
-<td style="text-align:left">Set a watchpoint on an instance variable of an object.</td>
-<td style="text-align:left">YES</td>
-<td style="text-align:left">YES</td>
-</tr>
-<tr>
-<td style="text-align:left">presponder</td>
-<td style="text-align:left">Print the responder chain starting from the given object.</td>
-<td style="text-align:left">YES</td>
-<td style="text-align:left">YES</td>
-</tr>
-<tr>
-<td style="text-align:left">…</td>
-<td style="text-align:left">…</td>
-<td style="text-align:left">…</td>
-<td style="text-align:left">…</td>
-</tr>
-</tbody>
-</table>
-<p>就介绍这么多了，现在自己用到的也并不算太多，做下记录，方便自己以后查阅，有兴趣的朋友可以自行了解其用法吧。</p>
-<h3 id="推荐博客"><a href="#推荐博客" class="headerlink" title="推荐博客"></a>推荐博客</h3><p>1、<a href="https://www.jianshu.com/p/b2371dd4443b" target="_blank" rel="noopener">LLdb篇2教你使用faceBook的chisel来提高调试效率</a><br>2、<a href="https://blog.cnbluebox.com/blog/2015/03/05/chisel/" target="_blank" rel="noopener">Chisel-LLDB命令插件，让调试更Easy</a></p>
 
       
     </div>
@@ -621,9 +515,9 @@
           
             <a href="/tags/LLDB/" rel="tag"><i class="fa fa-tag"></i> LLDB</a>
           
-            <a href="/tags/Terminal/" rel="tag"><i class="fa fa-tag"></i> Terminal</a>
+            <a href="/tags/Xcode/" rel="tag"><i class="fa fa-tag"></i> Xcode</a>
           
-            <a href="/tags/Chisel/" rel="tag"><i class="fa fa-tag"></i> Chisel</a>
+            <a href="/tags/iPhone/" rel="tag"><i class="fa fa-tag"></i> iPhone</a>
           
         </div>
       
@@ -649,8 +543,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/08/iOS优秀三方开源库整理，了解一下/" rel="next" title="iOS优秀三方开源库整理，了解一下">
-                <i class="fa fa-chevron-left"></i> iOS优秀三方开源库整理，了解一下
+              <a href="/2018/07/08/iOS定位处理约束冲突/" rel="next" title="iOS定位处理约束冲突">
+                <i class="fa fa-chevron-left"></i> iOS定位处理约束冲突
               </a>
             
           </div>
@@ -658,10 +552,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/08/iOS定位处理约束冲突/" rel="prev" title="iOS定位处理约束冲突">
-                iOS定位处理约束冲突 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -919,7 +809,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一、GitHub地址"><span class="nav-number">2.</span> <span class="nav-text">一、GitHub地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、安装"><span class="nav-number">3.</span> <span class="nav-text">二、安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、常用Commands"><span class="nav-number">4.</span> <span class="nav-text">三、常用Commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐博客"><span class="nav-number">5.</span> <span class="nav-text">推荐博客</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、硬性条件"><span class="nav-number">1.</span> <span class="nav-text">一、硬性条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、具体操作步骤"><span class="nav-number">2.</span> <span class="nav-text">二、具体操作步骤</span></a></li></ol></div>
             
 
           </div>
