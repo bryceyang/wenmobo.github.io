@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blogwenbo.com/"/>
-  <updated>2018-07-08T03:46:40.352Z</updated>
+  <updated>2018-07-08T03:55:31.805Z</updated>
   <id>http://blogwenbo.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chisel-LLDB调试助手</title>
+    <link href="http://blogwenbo.com/2018/07/08/Chisel-LLDB%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B/"/>
+    <id>http://blogwenbo.com/2018/07/08/Chisel-LLDB调试助手/</id>
+    <published>2018-07-08T03:52:01.000Z</published>
+    <updated>2018-07-08T03:55:31.805Z</updated>
+    
+    <content type="html"><![CDATA[<p class="description"></p><a id="more"></a><blockquote><p>Chisel is a collection of LLDB commands to assist debugging iOS apps.</p></blockquote><p>在我查阅如何定位视图约束冲突相关博客资料的时候，了解到了<strong>Facebook</strong>开源的这款LLDB调试工具，通过Chisel可以轻松的找到约束有冲突的视图，自己以前只接触过Xcode自带LLDB工具，用的也不算太多，通过阅读相关文档，发现<strong>Chisel</strong>有很多实用的功能，比如说打印视图层级关系，通过命令添加断点，打印对象继承关系，预览打开UIImage、CGImageRef图片，显示隐藏视图或layer等等。</p><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><blockquote><ul><li>GitHub地址</li><li>安装</li><li>常用常用Commands</li><li>推荐博客</li></ul></blockquote><h3 id="一、GitHub地址"><a href="#一、GitHub地址" class="headerlink" title="一、GitHub地址"></a>一、GitHub地址</h3><p><a href="https://github.com/facebook/chisel" target="_blank" rel="noopener">Chisel</a></p><h3 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h3><ul><li>未安装Homrebrew，先安装Homrebrew<br>参考<a href="https://www.jianshu.com/p/c60789934af1" target="_blank" rel="noopener">MAC上Homebrew常用命令</a></li><li><p>安装Chisel</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install chisel</span><br></pre></td></tr></table></figure></li><li><p>如果没有创建<strong>.lldbinit</strong>文件，则在终端创建文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch .lldbinit </span><br><span class="line">//open .lldbinit</span><br></pre></td></tr></table></figure></li><li><p>编辑<strong>.lldbinit</strong>文件，并添加以下内容<code>command script import /usr/local/opt/chisel/libexec/fblldb.py</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim .lldbinit</span><br><span class="line"></span><br><span class="line">//添加以下内容</span><br><span class="line"># ~/.lldbinit</span><br><span class="line">...</span><br><span class="line">command script import /path/to/fblldb.py</span><br></pre></td></tr></table></figure></li></ul><p>最后wq保存，重启Xcode，就可以使用Chisel了。</p><h3 id="三、常用Commands"><a href="#三、常用Commands" class="headerlink" title="三、常用Commands"></a>三、常用Commands</h3><table><thead><tr><th style="text-align:left">命令</th><th style="text-align:left">命令描述</th><th style="text-align:left">iOS</th><th style="text-align:left">OS X</th></tr></thead><tbody><tr><td style="text-align:left">pviews</td><td style="text-align:left">Print the recursive view description for the key window.</td><td style="text-align:left">YES</td><td style="text-align:left">YES</td></tr><tr><td style="text-align:left">pvc</td><td style="text-align:left">Print the recursive view controller description for the key window.</td><td style="text-align:left">YES</td><td style="text-align:left">NO</td></tr><tr><td style="text-align:left">visualize</td><td style="text-align:left">Open a UIImage, CGImageRef, UIView, CALayer, NSData (of an image), UIColor, CIColor, or CGColorRef in Preview.app on your Mac.</td><td style="text-align:left">YES</td><td style="text-align:left">NO</td></tr><tr><td style="text-align:left">fv</td><td style="text-align:left">Find a view in the hierarchy whose class name matches the provided regex.</td><td style="text-align:left">YES</td><td style="text-align:left">NO</td></tr><tr><td style="text-align:left">fvc</td><td style="text-align:left">Find a view controller in the hierarchy whose class name matches the provided regex.</td><td style="text-align:left">YES</td><td style="text-align:left">NO</td></tr><tr><td style="text-align:left">show/hide</td><td style="text-align:left">Show or hide the given view or layer. You don’t even have to continue the process to see the changes!</td><td style="text-align:left">YES</td><td style="text-align:left">YES</td></tr><tr><td style="text-align:left">mask/unmask</td><td style="text-align:left">Overlay a view or layer with a transparent rectangle to visualize where it is.</td><td style="text-align:left">YES</td><td style="text-align:left">NO</td></tr><tr><td style="text-align:left">border/unborder</td><td style="text-align:left">Add a border to a view or layer to visualize where it is.</td><td style="text-align:left">YES</td><td style="text-align:left">YES</td></tr><tr><td style="text-align:left">caflush</td><td style="text-align:left">Flush the render server (equivalent to a “repaint” if no animations are in-flight).</td><td style="text-align:left">YES</td><td style="text-align:left">YES</td></tr><tr><td style="text-align:left">bmessage</td><td style="text-align:left">Set a symbolic breakpoint on the method of a class or the method of an instance without worrying which class in the hierarchy actually implements the method.</td><td style="text-align:left">YES</td><td style="text-align:left">YES</td></tr><tr><td style="text-align:left">wivar</td><td style="text-align:left">Set a watchpoint on an instance variable of an object.</td><td style="text-align:left">YES</td><td style="text-align:left">YES</td></tr><tr><td style="text-align:left">presponder</td><td style="text-align:left">Print the responder chain starting from the given object.</td><td style="text-align:left">YES</td><td style="text-align:left">YES</td></tr><tr><td style="text-align:left">…</td><td style="text-align:left">…</td><td style="text-align:left">…</td><td style="text-align:left">…</td></tr></tbody></table><p>就介绍这么多了，现在自己用到的也并不算太多，做下记录，方便自己以后查阅，有兴趣的朋友可以自行了解其用法吧。</p><h3 id="推荐博客"><a href="#推荐博客" class="headerlink" title="推荐博客"></a>推荐博客</h3><p>1、<a href="https://www.jianshu.com/p/b2371dd4443b" target="_blank" rel="noopener">LLdb篇2教你使用faceBook的chisel来提高调试效率</a><br>2、<a href="https://blog.cnbluebox.com/blog/2015/03/05/chisel/" target="_blank" rel="noopener">Chisel-LLDB命令插件，让调试更Easy</a></p>]]></content>
+    
+    <summary type="html">
+    
+      在我查阅如何定位视图约束冲突相关博客资料的时候，了解到了**Facebook**开源的这款LLDB调试工具，通过Chisel可以轻松的找到约束有冲突的视图，自己以前只接触过Xcode自带LLDB工具，用的也不算太多，通过阅读相关文档，发现**Chisel**有很多实用的功能，比如说打印视图层级关系，通过命令添加断点，打印对象继承关系，预览打开UIImage、CGImageRef图片，显示隐藏视图或layer等等
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
+    
+      <category term="LLDB" scheme="http://blogwenbo.com/tags/LLDB/"/>
+    
+      <category term="Terminal" scheme="http://blogwenbo.com/tags/Terminal/"/>
+    
+  </entry>
   
   <entry>
     <title>iOS优秀三方开源库整理，了解一下</title>
@@ -34,9 +60,9 @@
       <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
     
     
-      <category term="GitHub" scheme="http://blogwenbo.com/tags/GitHub/"/>
-    
       <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
+    
+      <category term="GitHub" scheme="http://blogwenbo.com/tags/GitHub/"/>
     
       <category term="Objective-C" scheme="http://blogwenbo.com/tags/Objective-C/"/>
     
