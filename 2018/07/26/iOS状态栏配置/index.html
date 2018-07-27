@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="iOS,GitHub,Objective-C,Swift," />
+  <meta name="keywords" content="iOS,Runtime,Category," />
 
 
 
@@ -101,18 +101,18 @@
 
 
 
-<meta name="description" content="在自己工作之余，收集整理了一些优秀的三方开源框架，自己整理的这些三方开源库涵盖了iOS开发面很多方面的知识。非常感谢这些开源库的作者们，正是因为这些库，提高了我们的开发效率，同样也是我们学习进步的源泉。现将这个整理工程文件分享出来，希望能给需要的朋友一些帮助，同时也自己也做下收集记录。">
-<meta name="keywords" content="iOS,GitHub,Objective-C,Swift">
+<meta name="description" content="在APP开发当中，都要与状态栏打交道，因此我们需要了解采用哪种方式去管理状态栏样式，更容易开发与维护，如果界面定制地方较多，就不太适合全局配置状态栏，因为这样每次在界面将要显示、消失去配置状态栏，比较的繁琐，因此我们可以采用单个配置，不影响全局，而且可以随意切换样式。这篇文章主要也是记录自己在项目中遇到的问题，方便自己以后查阅，如果有写的不对的地方，希望能给予批评指正，我会及时更改。好了，开始介绍">
+<meta name="keywords" content="iOS,Runtime,Category">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS优秀三方开源库整理，了解一下">
-<meta property="og:url" content="http://blogwenbo.com/2018/07/08/iOS优秀三方开源库整理，了解一下/index.html">
+<meta property="og:title" content="iOS状态栏配置">
+<meta property="og:url" content="http://blogwenbo.com/2018/07/26/iOS状态栏配置/index.html">
 <meta property="og:site_name" content="Mr.Wen">
-<meta property="og:description" content="在自己工作之余，收集整理了一些优秀的三方开源框架，自己整理的这些三方开源库涵盖了iOS开发面很多方面的知识。非常感谢这些开源库的作者们，正是因为这些库，提高了我们的开发效率，同样也是我们学习进步的源泉。现将这个整理工程文件分享出来，希望能给需要的朋友一些帮助，同时也自己也做下收集记录。">
+<meta property="og:description" content="在APP开发当中，都要与状态栏打交道，因此我们需要了解采用哪种方式去管理状态栏样式，更容易开发与维护，如果界面定制地方较多，就不太适合全局配置状态栏，因为这样每次在界面将要显示、消失去配置状态栏，比较的繁琐，因此我们可以采用单个配置，不影响全局，而且可以随意切换样式。这篇文章主要也是记录自己在项目中遇到的问题，方便自己以后查阅，如果有写的不对的地方，希望能给予批评指正，我会及时更改。好了，开始介绍">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-15T06:11:07.987Z">
+<meta property="og:updated_time" content="2018-07-27T15:30:51.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS优秀三方开源库整理，了解一下">
-<meta name="twitter:description" content="在自己工作之余，收集整理了一些优秀的三方开源框架，自己整理的这些三方开源库涵盖了iOS开发面很多方面的知识。非常感谢这些开源库的作者们，正是因为这些库，提高了我们的开发效率，同样也是我们学习进步的源泉。现将这个整理工程文件分享出来，希望能给需要的朋友一些帮助，同时也自己也做下收集记录。">
+<meta name="twitter:title" content="iOS状态栏配置">
+<meta name="twitter:description" content="在APP开发当中，都要与状态栏打交道，因此我们需要了解采用哪种方式去管理状态栏样式，更容易开发与维护，如果界面定制地方较多，就不太适合全局配置状态栏，因为这样每次在界面将要显示、消失去配置状态栏，比较的繁琐，因此我们可以采用单个配置，不影响全局，而且可以随意切换样式。这篇文章主要也是记录自己在项目中遇到的问题，方便自己以后查阅，如果有写的不对的地方，希望能给予批评指正，我会及时更改。好了，开始介绍">
 
 
 
@@ -142,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://blogwenbo.com/2018/07/08/iOS优秀三方开源库整理，了解一下/"/>
+  <link rel="canonical" href="http://blogwenbo.com/2018/07/26/iOS状态栏配置/"/>
 
 
 
 
 
-  <title>iOS优秀三方开源库整理，了解一下 | Mr.Wen</title>
+  <title>iOS状态栏配置 | Mr.Wen</title>
   
 
 
@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blogwenbo.com/2018/07/08/iOS优秀三方开源库整理，了解一下/">
+    <link itemprop="mainEntityOfPage" href="http://blogwenbo.com/2018/07/26/iOS状态栏配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Wen">
@@ -346,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS优秀三方开源库整理，了解一下</h1>
+          <h1 class="post-title" itemprop="name headline">iOS状态栏配置</h1>
         
 
         <div class="post-meta">
@@ -358,8 +358,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-08T11:00:36+08:00">
-                2018-07-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T22:57:56+08:00">
+                2018-07-26
               </time>
             
 
@@ -398,7 +398,7 @@
 
           
           
-             <span id="/2018/07/08/iOS优秀三方开源库整理，了解一下/" class="leancloud_visitors" data-flag-title="iOS优秀三方开源库整理，了解一下">
+             <span id="/2018/07/26/iOS状态栏配置/" class="leancloud_visitors" data-flag-title="iOS状态栏配置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,664
+                  447
                 </span>
               
 
@@ -439,7 +439,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  2
                 </span>
               
             </div>
@@ -447,7 +447,7 @@
 
           
               <div class="post-description">
-                  在自己工作之余，收集整理了一些优秀的三方开源框架，自己整理的这些三方开源库涵盖了iOS开发面很多方面的知识。非常感谢这些开源库的作者们，正是因为这些库，提高了我们的开发效率，同样也是我们学习进步的源泉。现将这个整理工程文件分享出来，希望能给需要的朋友一些帮助，同时也自己也做下收集记录。
+                  在APP开发当中，都要与状态栏打交道，因此我们需要了解采用哪种方式去管理状态栏样式，更容易开发与维护，如果界面定制地方较多，就不太适合全局配置状态栏，因为这样每次在界面将要显示、消失去配置状态栏，比较的繁琐，因此我们可以采用单个配置，不影响全局，而且可以随意切换样式。这篇文章主要也是记录自己在项目中遇到的问题，方便自己以后查阅，如果有写的不对的地方，希望能给予批评指正，我会及时更改。好了，开始介绍吧！
               </div>
           
 
@@ -467,248 +467,35 @@
         <p class="description"></p>
 
 <a id="more"></a>
-<h3 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h3><blockquote>
-<p>在自己工作之余，收集整理了一些优秀的三方开源框架，自己整理的这些三方开源库涵盖了iOS开发面很多方面的知识。非常感谢这些开源库的作者们，正是因为这些库，提高了我们的开发效率，同样也是我们学习进步的源泉。现将这个整理工程文件分享出来，希望能给需要的朋友一些帮助，同时也自己也做下收集记录。</p>
-</blockquote>
-<p><strong>Github整理的地址</strong>：<br><a href="https://github.com/wenmobo/WBCollectOCThirdLib" target="_blank" rel="noopener">WBCollectOCThirdLib</a><br><a href="https://github.com/wenmobo/WBCollectSwfitThirdLib" target="_blank" rel="noopener">WBCollectSwfitThirdLib</a></p>
-<h3 id="二、Objective-C三方开源库"><a href="#二、Objective-C三方开源库" class="headerlink" title="二、Objective-C三方开源库"></a>二、Objective-C三方开源库</h3><ul>
-<li><p>表格侧滑菜单  </p>
-<pre><code>[MGSwipeTableCell](https://github.com/MortimerGoro/MGSwipeTableCell) - **6300 star**  
-[SWTableViewCell](https://github.com/CEWendel/SWTableViewCell) - **7088 star**    
-[ZJSwipeTableView](https://github.com/jasnig/ZJSwipeTableView) - **7 star**
-</code></pre></li>
-<li><p>表格高度缓存库    </p>
-<pre><code>[FDTemplateLayoutCell](https://github.com/forkingdog/UITableView-FDTemplateLayoutCell) - **8992 star**   
-[HYBMasonryAutoCellHeight](https://github.com/CoderJackyHuang/HYBMasonryAutoCellHeight) - **595 star**
-</code></pre></li>
-<li><p>表格刷新控件  </p>
-<pre><code>[MJRefresh](https://github.com/CoderMJLee/MJRefresh) - **12006 star**  
-[KafkaRefresh](https://github.com/OpenFeyn/KafkaRefresh) - **627 star**
-</code></pre></li>
-<li><p>弹出菜单（类似微信弹出菜单）  </p>
-<pre><code>[FTPopOverMenu](https://github.com/liufengting/FTPopOverMenu) - **712 star**    
-[kxmenu](https://github.com/kolyvan/kxmenu) - **1776 star**  
-[PopMenuTableView](https://github.com/KongPro/PopMenuTableView) - **217 star**  
-</code></pre></li>
-<li><p>导航栏    </p>
-<pre><code>[FDFullscreenPopGesture](https://github.com/forkingdog/FDFullscreenPopGesture) - **5010 star**  
-[KMNavigationBarTransition](https://github.com/MoZhouqi/KMNavigationBarTransition) - **2549 star**  
-[RTRootNavigationController](https://github.com/rickytan/RTRootNavigationController) - **1333 star**    
-[WRNavigationBar](https://github.com/wangrui460/WRNavigationBar) - **1852 star**
-</code></pre></li>
-<li><p>动画  </p>
-<pre><code>[lottie-ios](https://github.com/airbnb/lottie-ios) - **14103 star**  
-[pop](https://github.com/facebook/pop) - **19064 star**     
-[LSAnimator](https://github.com/Lision/LSAnimator) **1238 star**
-</code></pre></li>
-<li><p>分段控件  </p>
-<pre><code>[HMSegmentedControl](https://github.com/HeshamMegid/HMSegmentedControl) - **3392 star**  
-</code></pre></li>
-<li><p>富文本编辑    </p>
-<pre><code>[ZSSRichTextEditor](https://github.com/nnhubbard/ZSSRichTextEditor) - **2891 star**
-</code></pre></li>
-<li><p>弹幕  </p>
-<pre><code>[HJDanmakuDemo](https://github.com/panghaijiao/HJDanmakuDemo) - **717 star**    
-</code></pre></li>
-<li><p>滚动视图  </p>
-<pre><code>[SwipeView](https://github.com/nicklockwood/SwipeView) - **2611 star**
-</code></pre></li>
-<li><p>滚动视图嵌套  </p>
-<pre><code>[HJTabViewController](https://github.com/panghaijiao/HJTabViewController) - **191 star**    
-[LTScrollView](https://github.com/gltwy/LTScrollView) - **236 star**
-</code></pre></li>
-<li><p>红点提示  </p>
-<pre><code>[JSBadgeView](https://github.com/JaviSoto/JSBadgeView) - **1209 star**   
-[WZLBadge](https://github.com/weng1250/WZLBadge) - **1603 star**
-</code></pre></li>
-<li><p>键盘  </p>
-<pre><code>[IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager) - **11697 star**  
-[MMNumberKeyboard](https://github.com/matmartinez/MMNumberKeyboard) - **911 star**  
-[TPKeyboardAvoiding](https://github.com/michaeltyson/TPKeyboardAvoiding) - **5568 star**    
-</code></pre></li>
-<li><p>界面布局   </p>
-<pre><code>[FlexLib](https://github.com/zhenglibao/FlexLib) - **496 star**  
-[Masonry](https://github.com/SnapKit/Masonry) - **16526 star**  
-[SDAutoLayout](https://github.com/gsdios/SDAutoLayout) - **5241 star**   
-[WHC_AutoLayoutKit](https://github.com/netyouli/WHC_AutoLayoutKit) - **786 star**
-</code></pre></li>
-<li><p>进度指示器    </p>
-<pre><code>[DACircularProgress](https://github.com/danielamitay/DACircularProgress) - **2307 star**    
-[SDProgressView](https://github.com/gsdios/SDProgressView) - **378 star**
-</code></pre></li>
-<li><p>开发模式  </p>
-<pre><code>[KVOController](https://github.com/facebook/KVOController) - **6524 star**   
-</code></pre></li>
-<li><p>控制器切换    </p>
-<pre><code>[DWQListOfDifferentOrderStatus](https://github.com/DevelopmentEngineer-DWQ/DWQListOfDifferentOrderStatus) **12 star**   
-[HYPageView](https://github.com/runlhy/HYPageView) - **74 star**  
-[SGPagingView](https://github.com/kingsic/SGPagingView) - **822 star**    
-[WMPageController](https://github.com/wangmchn/WMPageController) - **2229 star**    
-[ZJScrollPageView](https://github.com/jasnig/ZJScrollPageView) - **847 star**
-</code></pre></li>
-<li><p>数据存储  </p>
-<pre><code>[fmdb](https://github.com/ccgus/fmdb) - **12533 star**   
-[BGFMDB](https://github.com/huangzhibiao/BGFMDB) - **771 star**  
-[JKDBModel](https://github.com/Haley-Wong/JKDBModel) - **683 star**  
-[JRDB](https://github.com/scubers/JRDB) - **480 star**  
-[LKDBHelper-SQLite-ORM](https://github.com/li6185377/LKDBHelper-SQLite-ORM) - **980 star**
-</code></pre></li>
-<li><p>数据转模型  </p>
-<pre><code>[MJExtension](https://github.com/CoderMJLee/MJExtension) - **7667 star**   
-[YYModel](https://github.com/ibireme/YYModel) - **3589 star**  
-[Mantle](https://github.com/Mantle/Mantle)  - **11023 star**    
-[jsonmodel](https://github.com/jsonmodel/jsonmodel) - **6559 star**  
-[GDataXML-HTML](https://github.com/graetzer/GDataXML-HTML) - **261 star**
-</code></pre></li>
-<li><p>搜索  </p>
-<pre><code>[PYSearch](https://github.com/ko1o/PYSearch) - **2976 star**
-</code></pre></li>
-<li><p>提示框架  </p>
-<pre><code>[MBProgressHUD](https://github.com/jdg/MBProgressHUD/tree/master) - **14618 star**  
-[SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD) - **11046 star**    
-[JGProgressHUD](https://github.com/JonasGessner/JGProgressHUD) - **2257 star**  
-[KSToastView](https://github.com/c0ming/KSToastView) - **91 star**  
-[MMPopupView](https://github.com/adad184/MMPopupView) - **1910 star**   
-[SCLAlertView](https://github.com/dogo/SCLAlertView) - **3084 star**   
-[Toast](https://github.com/scalessec/Toast) - **3085 star**
-</code></pre></li>
-<li><p>图表绘制  </p>
-<pre><code>[AAChartKit](https://github.com/AAChartModel/AAChartKit) - **2241 star**   
-[JHChart](https://github.com/China131/JHChart) - **508 star**  
-[ZFChart](https://github.com/Zirkfied/ZFChart) - **670 star**  
-[DVPieChart](https://github.com/FireMou/DVPieChart) - **63 star**  
-[DVLineChart](https://github.com/FireMou/DVLineChart) - **56 star**
-</code></pre></li>
-<li><p>图片缓存框架  </p>
-<pre><code>[SDWebImage](https://github.com/rs/SDWebImage) - **22089 star**  
-[FLAnimatedImage](https://github.com/Flipboard/FLAnimatedImage) - **6691 star**     
-[iOS-WebP](https://github.com/seanooi/iOS-WebP) - **739 star**  
-[YYWebImage](https://github.com/ibireme/YYWebImage) - **3195 star**  
-</code></pre></li>
-<li><p>图片浏览  </p>
-<pre><code>[MWPhotoBrowser](https://github.com/mwaterfall/MWPhotoBrowser) - **8238 star**  
-[PYPhotoBrowser](https://github.com/ko1o/PYPhotoBrowser) - **1782 star**   
-[SDPhotoBrowser](https://github.com/gsdios/SDPhotoBrowser) - **962 star**    
-[STPhotoBrowser](https://github.com/STShenZhaoliang/STPhotoBrowser) - **299 star**  
-[KSPhotoBrowser](https://github.com/skx926/KSPhotoBrowser) - **457 star**
-</code></pre></li>
-<li><p>图片轮播  </p>
-<pre><code>[SDCycleScrollView](https://github.com/gsdios/SDCycleScrollView) - **4921 star**    
-[HYBLoopScrollView](https://github.com/CoderJackyHuang/HYBLoopScrollView) - **615 star**    
-[TXScrollLabelView](https://github.com/tingxins/TXScrollLabelView) - **497 star**
-</code></pre></li>
-<li><p>图片拾取  </p>
-<pre><code>[TZImagePickerController](https://github.com/banchichen/TZImagePickerController) - **5065 star**    
-[CTAssetsPickerController](https://github.com/chiunam/CTAssetsPickerController) - **2142 star**     
-[DNImagePicker](https://github.com/AwesomeDennis/DNImagePicker) - **365 star**  
-[HXWeiboPhotoPicker](https://github.com/KeenTeam1990/HXWeiboPhotoPicker) - **7 star**
-</code></pre></li>
-<li><p>3D效果图  </p>
-<pre><code>[HelloPanoramaGL](https://github.com/heroims/HelloPanoramaGL) - **39 star**
-</code></pre></li>
-<li><p>网络请求  </p>
-<pre><code>[AFNetworking](https://github.com/AFNetworking/AFNetworking) - **31246 star**    
-[YTKNetwork](https://github.com/yuantiku/YTKNetwork) - **5385 star**   
-[PPNetworkHelper](https://github.com/jkpang/PPNetworkHelper) - **1180 star**     
-[HYBNetworking](https://github.com/CoderJackyHuang/HYBNetworking) - **541 star**    
-[SJNetwork](https://github.com/knightsj/SJNetwork) - **153 star**
-</code></pre></li>
-<li><p>网络状态监测  </p>
-<pre><code>[Reachability](https://github.com/tonymillion/Reachability) - **6665 star**
-</code></pre></li>
-<li><p>文件下载  </p>
-<pre><code>[TWRDownloadManager](https://github.com/chasseurmic/TWRDownloadManager) - **366 star**  
-[ZFDownload](https://github.com/renzifeng/ZFDownload) - **291 star**
-</code></pre></li>
-<li><p>旋转木马  </p>
-<pre><code>[iCarousel](https://github.com/nicklockwood/iCarousel) - **10628 star**  
-[NewPagedFlowView](https://github.com/PageGuo/NewPagedFlowView) - **512 star**
-</code></pre></li>
-<li><p>音视频    </p>
-<pre><code>[ijkplayer](https://github.com/Bilibili/ijkplayer) - **19602 star**  
-[ZFPlayer](https://github.com/renzifeng/ZFPlayer) - **4539 star**  
-[WMPlayer](https://github.com/zhengwenming/WMPlayer) - **2397 star**   
-[TBPlayer](https://github.com/suifengqjn/TBPlayer) - **1125 star**  
-[TTAVPlayer](https://github.com/tangdiforx/TTAVPlayer) - **118 star**
-</code></pre></li>
-<li><p>占位图        </p>
-<pre><code>[DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet) - **10439 star**  
-[LYEmptyView](https://github.com/dev-liyang/LYEmptyView) - **657 star**
-</code></pre></li>
-<li><p>C语言扩展库   </p>
-<pre><code>[libextobjc](https://github.com/jspahrsummers/libextobjc) - **3936 star**   
-</code></pre></li>
-<li><p>Socket编程    </p>
-<pre><code>[CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket) - **10193 star**   
-[SocketRocket](https://github.com/facebook/SocketRocket) - **7833 star**   
-[socket.io](https://github.com/socketio/socket.io) - **42419 star**  
-[MQTTKit](https://github.com/mobile-web-messaging/MQTTKit) - **407 star**
-</code></pre></li>
-<li><p>内存泄露检测工具  </p>
-<pre><code>[MLeaksFinder](https://github.com/Tencent/MLeaksFinder) - **3568 star**   
-[FBRetainCycleDetector](https://github.com/facebook/FBRetainCycleDetector) - **3068 star**
-</code></pre></li>
-<li><p>YYKit     </p>
-<pre><code>[YYKit](https://github.com/ibireme/YYKit) - **12185 star**
-</code></pre></li>
-<li><p>LOG工具   </p>
-<pre><code>[CocoaLumberjack](https://github.com/CocoaLumberjack/CocoaLumberjack) - **10382 star**
-</code></pre></li>
-<li><p>OC与JS交互    </p>
-<pre><code>[WebViewJavascriptBridge](https://github.com/marcuswestin/WebViewJavascriptBridge) - **11017 star**
-</code></pre></li>
-<li><p>输入框占位符  </p>
-<pre><code>[UITextView-Placeholder](https://github.com/devxoul/UITextView-Placeholder) - **797 star**  
-[RPFloatingPlaceholders](https://github.com/iwasrobbed/RPFloatingPlaceholders) - **1115 star**  
-[SZTextView](https://github.com/glaszig/SZTextView) - **652 star**  
-</code></pre></li>
-<li><p>分类  </p>
-<pre><code>[JKCategories](https://github.com/shaojiankui/JKCategories) - **2770 star**
-</code></pre></li>
-<li><p>图像处理  </p>
-<pre><code>[GPUImage](https://github.com/BradLarson/GPUImage) - **17606 star**
-</code></pre></li>
-<li><p>iOS开发知识集合   </p>
-<ul>
-<li><p><a href="https://github.com/awesome-tips/iOS-Tips" target="_blank" rel="noopener">iOS-Tips</a> - <strong>2187 star</strong>   </p>
-<p> iOS知识小集，<code>iOS知识小集</code>的初衷是希望用300字左右（外加代码和效果展示）来说明一个小知识点，这样读者可以在上下班路上，花个2分钟就能了解一个iOS开发的小知识。</p>
+<h3 id="一、全局配置状态栏"><a href="#一、全局配置状态栏" class="headerlink" title="一、全局配置状态栏"></a>一、全局配置状态栏</h3><ul>
+<li><p>在<strong>info.plist</strong>中添加key：<strong>View controller-based status bar appearance</strong>，并设置value为<strong>NO</strong>。</p>
+</li>
+<li><p>在需要设置样式的地方调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//UIStatusBarStyleLightContent：Light content, for use on dark backgrounds</span><br><span class="line">//UIStatusBarStyleDefault：Dark content, for use on light backgrounds</span><br><span class="line">[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<h3 id="二、配置单个控制器状态栏"><a href="#二、配置单个控制器状态栏" class="headerlink" title="二、配置单个控制器状态栏"></a>二、配置单个控制器状态栏</h3><ul>
+<li><p>在<strong>info.plist</strong>中添加key：<strong>View controller-based status bar appearance</strong>，并设置value为<strong>YES</strong>。</p>
 </li>
-<li><p>面试题集锦    </p>
-<ul>
-<li><p><a href="https://github.com/ChenYilong/iOSInterviewQuestions" target="_blank" rel="noopener">iOSInterviewQuestions</a> - <strong>6809 star</strong>  </p>
-<p>iOS面试题集锦（附答案），分为两篇<a href="https://github.com/ChenYilong/iOSInterviewQuestions/blob/master/01%E3%80%8A%E6%8B%9B%E8%81%98%E4%B8%80%E4%B8%AA%E9%9D%A0%E8%B0%B1%E7%9A%84iOS%E3%80%8B%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88/%E3%80%8A%E6%8B%9B%E8%81%98%E4%B8%80%E4%B8%AA%E9%9D%A0%E8%B0%B1%E7%9A%84iOS%E3%80%8B%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88%EF%BC%88%E4%B8%8A%EF%BC%89.md" target="_blank" rel="noopener">《招聘一个靠谱的 iOS》—参考答案（上）</a>   、<a href="https://github.com/ChenYilong/iOSInterviewQuestions/blob/master/01%E3%80%8A%E6%8B%9B%E8%81%98%E4%B8%80%E4%B8%AA%E9%9D%A0%E8%B0%B1%E7%9A%84iOS%E3%80%8B%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88/%E3%80%8A%E6%8B%9B%E8%81%98%E4%B8%80%E4%B8%AA%E9%9D%A0%E8%B0%B1%E7%9A%84iOS%E3%80%8B%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88%EF%BC%88%E4%B8%8B%EF%BC%89.md" target="_blank" rel="noopener">《招聘一个靠谱的 iOS》—参考答案（下）</a>，面试前值得学习与了解。</p>
+<li><p>如果有控制器没有导航控制器，直接重写<strong>preferredStatusBarStyle</strong> 方法返回你想要的状态栏样式即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- (UIStatusBarStyle)preferredStatusBarStyle &#123;</span><br><span class="line">    return UIStatusBarStyleLightContent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><a href="https://github.com/liberalisman/iOS-InterviewQuestion-collection" target="_blank" rel="noopener">iOS-InterviewQuestion-collection</a> - <strong>1019 star</strong> </p>
-<p>iOS 开发者在面试过程中，常见的一些面试题，建议尽量弄懂了原理，并且多实践。</p>
-</li>
-</ul>
-</li>
-<li><p>三方开源库分析    </p>
-<ul>
-<li><p><a href="https://github.com/Draveness/analyze" target="_blank" rel="noopener">analyze</a> - <strong>6077 star</strong></p>
-<p>主要记录了Draveness大神阅读开源框架源代码的心得，主要框架包括<strong>SDWebImage</strong>、<strong>MBProgressHUD</strong>、<strong>Masonry</strong>、<strong>AFNetworking</strong>、<strong>KVOController</strong>等，有兴趣的朋友可以到GitHub阅读。</p>
+<li><p>通常都有导航控制器，如果控制器中直接重写<strong>preferredStatusBarStyle</strong>是没有效果的，这时需要在基类导航控制器中重写<strong>childViewControllerForStatusBarStyle</strong> 、<strong>preferredStatusBarStyle</strong> 任意一个方法就能实现配置单个控制器的状态栏样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (UIViewController *)childViewControllerForStatusBarStyle &#123;</span><br><span class="line">    return self.topViewController;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">或者重写</span><br><span class="line">- (UIStatusBarStyle)preferredStatusBarStyle &#123;</span><br><span class="line">    return [self.topViewController preferredStatusBarStyle];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：两个方法都重写，只会调用<strong>childViewControllerForStatusBarStyle</strong>，所以需要自己根据清空去选择调用那个方法。</p>
 </li>
 </ul>
+<h3 id="三、通过分类实现"><a href="#三、通过分类实现" class="headerlink" title="三、通过分类实现"></a>三、通过分类实现</h3><ul>
+<li><p>在项目中方便使用，我写了一个<strong>UINavigationController（WBStatusBarStyle）</strong> 分类，主要代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">@implementation UINavigationController (WBStatusBarStyle)</span><br><span class="line"></span><br><span class="line">+ (void)wb_setDefaultStatusBarStyle:(UIStatusBarStyle)statusBarStyle &#123;</span><br><span class="line">    objc_setAssociatedObject(self, &amp;kWBDefaultStatusBarStyleKey, @(statusBarStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (UIStatusBarStyle)wb_DefaultStatusBarStyle &#123;</span><br><span class="line">    id style = objc_getAssociatedObject(self, &amp;kWBDefaultStatusBarStyleKey);</span><br><span class="line">    return style ? [style integerValue] : UIStatusBarStyleDefault;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** &lt; Override to return a child view controller or nil. If non-nil, that view controller&apos;s status bar appearance attributes will be used. If nil, self is used. Whenever the return values from these methods change, -setNeedsUpdatedStatusBarAttributes should be called. &gt; */</span><br><span class="line">//- (UIViewController *)childViewControllerForStatusBarStyle &#123;</span><br><span class="line">//    return self.topViewController;</span><br><span class="line">//&#125;</span><br><span class="line">//</span><br><span class="line">//- (UIViewController *)childViewControllerForStatusBarHidden &#123;</span><br><span class="line">//    return self.topViewController;</span><br><span class="line">//&#125;</span><br><span class="line"></span><br><span class="line">- (UIStatusBarStyle)preferredStatusBarStyle &#123;</span><br><span class="line">    return [self.topViewController wb_statusBarStyle];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>UIViewController (WBStatusBarStyle)</strong> </p>
 </li>
 </ul>
-<h3 id="三、Swift三方开源库"><a href="#三、Swift三方开源库" class="headerlink" title="三、Swift三方开源库"></a>三、Swift三方开源库</h3><ul>
-<li>动画  <pre><code>[NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView) - **7098 star**
-</code></pre></li>
-<li>网络请求  <pre><code>[Alamofire](https://github.com/Alamofire/Alamofire) - **28292 star**
-</code></pre></li>
-<li>占位图    <pre><code>[SkeletonView](https://github.com/Juanpe/SkeletonView) - **5083 star**
-</code></pre></li>
-<li>二维码扫描    <pre><code>[EFQRCode](https://github.com/EyreFree/EFQRCode) - **2751 star**
-</code></pre></li>
-<li>布局框架  <pre><code>[SnapKit](https://github.com/SnapKit/SnapKit) - **12978 star**  
-</code></pre></li>
-<li>图表绘制  <pre><code>[Charts](https://github.com/danielgindi/Charts) - **18605 star**
-</code></pre><h3 id="四、结语"><a href="#四、结语" class="headerlink" title="四、结语"></a>四、结语</h3><blockquote>
-<p>上面这些三方开源库按照自己的理解分类整理了一遍，其中OC语言库居多，自己现在也是基于OC开发，Swift收集的相对较少，这些库也是自己现在所了解到的，当然还有很多优秀的三方库自己也未发现和接触，我以后会不断在这篇博客中更新优秀的三方开源库。</p>
-</blockquote>
-</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@implementation UIViewController (WBStatusBarStyle)</span><br><span class="line"></span><br><span class="line">- (void)setWb_statusBarStyle:(UIStatusBarStyle)wb_statusBarStyle &#123;</span><br><span class="line">    objc_setAssociatedObject(self, &amp;kWBStatusBarStyleKey, @(wb_statusBarStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">    /** &lt; Whenever the return values from these methods change, -setNeedsUpdatedStatusBarAttributes should be called. &gt; */</span><br><span class="line">    [self setNeedsStatusBarAppearanceUpdate];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (UIStatusBarStyle)wb_statusBarStyle &#123;</span><br><span class="line">    id style = objc_getAssociatedObject(self, &amp;kWBStatusBarStyleKey);</span><br><span class="line">    return style ? [style integerValue] : [UINavigationController wb_DefaultStatusBarStyle];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h3 id="四、GitHub-Demo"><a href="#四、GitHub-Demo" class="headerlink" title="四、GitHub Demo"></a>四、GitHub Demo</h3><ul>
+<li><a href="https://github.com/wenmobo/WBManageStatusBarStyleDemo" target="_blank" rel="noopener">WBManageStatusBarStyleDemo</a></li>
+<li><a href="https://github.com/wenmobo/WBCategories" target="_blank" rel="noopener">WBCategories</a></li>
 </ul>
 
       
@@ -745,11 +532,9 @@
           
             <a href="/tags/iOS/" rel="tag"><i class="fa fa-tag"></i> iOS</a>
           
-            <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
+            <a href="/tags/Runtime/" rel="tag"><i class="fa fa-tag"></i> Runtime</a>
           
-            <a href="/tags/Objective-C/" rel="tag"><i class="fa fa-tag"></i> Objective-C</a>
-          
-            <a href="/tags/Swift/" rel="tag"><i class="fa fa-tag"></i> Swift</a>
+            <a href="/tags/Category/" rel="tag"><i class="fa fa-tag"></i> Category</a>
           
         </div>
       
@@ -775,8 +560,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/07/GitPages-Hexo搭建个人博客/" rel="next" title="GitPages+Hexo搭建个人博客">
-                <i class="fa fa-chevron-left"></i> GitPages+Hexo搭建个人博客
+              <a href="/2018/07/08/Hexo七牛插件安装与使用/" rel="next" title="Hexo七牛插件安装与使用">
+                <i class="fa fa-chevron-left"></i> Hexo七牛插件安装与使用
               </a>
             
           </div>
@@ -784,10 +569,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/08/Chisel-LLDB调试助手/" rel="prev" title="Chisel-LLDB调试助手">
-                Chisel-LLDB调试助手 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1045,7 +826,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、前言"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Objective-C三方开源库"><span class="nav-number">2.</span> <span class="nav-text">二、Objective-C三方开源库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、Swift三方开源库"><span class="nav-number">3.</span> <span class="nav-text">三、Swift三方开源库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、结语"><span class="nav-number">4.</span> <span class="nav-text">四、结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、全局配置状态栏"><span class="nav-number">1.</span> <span class="nav-text">一、全局配置状态栏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、配置单个控制器状态栏"><span class="nav-number">2.</span> <span class="nav-text">二、配置单个控制器状态栏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、通过分类实现"><span class="nav-number">3.</span> <span class="nav-text">三、通过分类实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、GitHub-Demo"><span class="nav-number">4.</span> <span class="nav-text">四、GitHub Demo</span></a></li></ol></div>
             
 
           </div>
