@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="iOS,Chisel,Xcode,Objective-C,Swift," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -101,21 +101,16 @@
 
 
 
-<meta name="description" content="在做项目的时候，无意间看到自动布局约束警告，开始也也觉得没什么，虽然有警告，但并不影响UI展示效果。但是越来越有代码洁癖的我，也忍受不了控制台输出一大堆约束警告Log，于是就查阅如何定位解决约束冲突，同时自己也记录下来。下面开始介绍具体操作步骤吧。">
-<meta name="keywords" content="iOS,Chisel,Xcode,Objective-C,Swift">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iOS定位处理约束冲突">
-<meta property="og:url" content="http://blogwenbo.com/2018/07/08/iOS定位处理约束冲突/index.html">
+<meta name="description" content="To strive, to seek, to find, and not to yield">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mr.Wen">
+<meta property="og:url" content="http://blogwenbo.com/tags/SVProgressHUD/index.html">
 <meta property="og:site_name" content="Mr.Wen">
-<meta property="og:description" content="在做项目的时候，无意间看到自动布局约束警告，开始也也觉得没什么，虽然有警告，但并不影响UI展示效果。但是越来越有代码洁癖的我，也忍受不了控制台输出一大堆约束警告Log，于是就查阅如何定位解决约束冲突，同时自己也记录下来。下面开始介绍具体操作步骤吧。">
+<meta property="og:description" content="To strive, to seek, to find, and not to yield">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace3a0af6?w=428&h=226&f=png&s=37641">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace93dcbb?w=998&h=514&f=png&s=129745">
-<meta property="og:updated_time" content="2018-07-08T04:03:16.299Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS定位处理约束冲突">
-<meta name="twitter:description" content="在做项目的时候，无意间看到自动布局约束警告，开始也也觉得没什么，虽然有警告，但并不影响UI展示效果。但是越来越有代码洁癖的我，也忍受不了控制台输出一大堆约束警告Log，于是就查阅如何定位解决约束冲突，同时自己也记录下来。下面开始介绍具体操作步骤吧。">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace3a0af6?w=428&h=226&f=png&s=37641">
+<meta name="twitter:title" content="Mr.Wen">
+<meta name="twitter:description" content="To strive, to seek, to find, and not to yield">
 
 
 
@@ -145,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://blogwenbo.com/2018/07/08/iOS定位处理约束冲突/"/>
+  <link rel="canonical" href="http://blogwenbo.com/tags/SVProgressHUD/"/>
 
 
 
 
 
-  <title>iOS定位处理约束冲突 | Mr.Wen</title>
+  <title>标签: SVProgressHUD | Mr.Wen</title>
   
 
 
@@ -170,7 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 <a href="https://github.com/wenmobo" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -318,320 +313,54 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>SVProgressHUD<small>标签</small>
+        </h1>
+      </div>
 
-  
-  
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blogwenbo.com/2018/07/08/iOS定位处理约束冲突/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mr.Wen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/3072214/ccbcba49-0a5c-4b7e-b1e4-aea15ab4419f.png?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.Wen">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/2018/09/03/CocoaPods进阶：制作公有库/" itemprop="url">
+              
+                <span itemprop="name">CocoaPods进阶：制作公有库</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">iOS定位处理约束冲突</h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-08T11:58:08+08:00">
-                2018-07-08
-              </time>
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-09-03T21:35:29+08:00"
+              content="2018-09-03" >
+          09-03
+        </time>
+      </div>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/07/08/iOS定位处理约束冲突/" class="leancloud_visitors" data-flag-title="iOS定位处理约束冲突">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span><span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  321
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-              <div class="post-description">
-                  在做项目的时候，无意间看到自动布局约束警告，开始也也觉得没什么，虽然有警告，但并不影响UI展示效果。但是越来越有代码洁癖的我，也忍受不了控制台输出一大堆约束警告Log，于是就查阅如何定位解决约束冲突，同时自己也记录下来。下面开始介绍具体操作步骤吧。
-              </div>
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p class="description"></p>
-
-<a id="more"></a>
-<h3 id="一、添加UIViewAlertForUnsatisfiableConstraints断点"><a href="#一、添加UIViewAlertForUnsatisfiableConstraints断点" class="headerlink" title="一、添加UIViewAlertForUnsatisfiableConstraints断点"></a>一、添加UIViewAlertForUnsatisfiableConstraints断点</h3><ul>
-<li>添加<strong>Symbolic Breakpoints</strong><br><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace3a0af6?w=428&amp;h=226&amp;f=png&amp;s=37641" alt="屏幕快照 2018-06-04 下午2.44.35.png"></li>
-<li><p>编辑断点symbol填入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UIViewAlertForUnsatisfiableConstraints</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加控制台打印action</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">po [[UIWindow keyWindow] _autolayoutTrace]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace93dcbb?w=998&amp;h=514&amp;f=png&amp;s=129745" alt="屏幕快照 2018-06-04 下午2.44.50.png"></p>
-<h3 id="二、定位约束警告冲突"><a href="#二、定位约束警告冲突" class="headerlink" title="二、定位约束警告冲突"></a>二、定位约束警告冲突</h3><ul>
-<li><p>添加好断点之后，当界面有约束冲突，就会触发断点，控制打印如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[LayoutConstraints] Unable to simultaneously satisfy constraints.</span><br><span class="line">	Probably at least one of the constraints in the following list is one you don&apos;t want. </span><br><span class="line">	Try this: </span><br><span class="line">		(1) look at each constraint and try to figure out which you don&apos;t expect; </span><br><span class="line">		(2) find the code that added the unwanted constraint or constraints and fix it. </span><br><span class="line">(</span><br><span class="line">	&lt;MASLayoutConstraint:0x604000ab04a0 UIButton:0x7faf99f04010.width == 40&gt;,</span><br><span class="line">	&lt;MASLayoutConstraint:0x604000ab66e0 UIButton:0x7faf99f04010.left == CYBButtonView:0x7faf99f83360.left + 10&gt;,</span><br><span class="line">	&lt;MASLayoutConstraint:0x604000abaa00 UILabel:0x7faf99f5f8e0.left == UIButton:0x7faf99f04010.right&gt;,</span><br><span class="line">	&lt;MASLayoutConstraint:0x604000abd580 UILabel:0x7faf99f5f8e0.left == CYBButtonView:0x7faf99f83360.left + 15&gt;,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">Will attempt to recover by breaking constraint </span><br><span class="line">&lt;MASLayoutConstraint:0x604000ab04a0 UIButton:0x7faf99f04010.width == 40&gt;</span><br><span class="line"></span><br><span class="line">Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.</span><br><span class="line">The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in &lt;UIKit/UIView.h&gt; may also be helpful.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>根据提示，找到约束有问题的控件地址<strong>0x7faf99f04010</strong>，然后全局搜索，就能找到具体是哪个控件</p>
-</li>
-<li>如果控制台打印不够直观看出是哪个控件约束有问题，我们可以通过 LLDB命令工具<a href="https://github.com/facebook/chisel" target="_blank" rel="noopener">chisel</a>定位寻找。</li>
-</ul>
-<h3 id="三、解决冲突"><a href="#三、解决冲突" class="headerlink" title="三、解决冲突"></a>三、解决冲突</h3><p>通常解决冲突的方法有：</p>
-<blockquote>
-<ul>
-<li>删除多余约束</li>
-<li>修改约束优先级</li>
-</ul>
-</blockquote>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>1、<a href="https://stackoverflow.com/questions/26389273/how-to-trap-on-uiviewalertforunsatisfiableconstraints" target="_blank" rel="noopener">How to trap on UIViewAlertForUnsatisfiableConstraints?</a></p>
-
-      
-    </div>
-    
-    
-    
-
-<div>
-  
-    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-  
-</div>
-
-<div>
-      
-        
-      
-</div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/iOS/" rel="tag"><i class="fa fa-tag"></i> iOS</a>
-          
-            <a href="/tags/Chisel/" rel="tag"><i class="fa fa-tag"></i> Chisel</a>
-          
-            <a href="/tags/Xcode/" rel="tag"><i class="fa fa-tag"></i> Xcode</a>
-          
-            <a href="/tags/Objective-C/" rel="tag"><i class="fa fa-tag"></i> Objective-C</a>
-          
-            <a href="/tags/Swift/" rel="tag"><i class="fa fa-tag"></i> Swift</a>
-          
-        </div>
-      
-
-      
-      
-        <div class="post-widgets">
-        
-          <div class="wp_rating">
-<div style="color: rgba(0, 0, 0, 0.75); font-size:13px; letter-spacing:3px">(&gt;看完记得五星好评哦亲&lt;)</div>
-            <div id="wpac-rating"></div>
-          </div>
-        
-
-        
-
-        
-        </div>
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/07/08/Chisel-LLDB调试助手/" rel="next" title="Chisel-LLDB调试助手">
-                <i class="fa fa-chevron-left"></i> Chisel-LLDB调试助手
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/08/Xcode无线真机调试/" rel="prev" title="Xcode无线真机调试">
-                Xcode无线真机调试 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
-      <!--MOB SHARE BEGIN-->
-<div class="-hoofoo-share-title">分享到：</div>
-<div class="-hoofoo-share-buttons">
-    <div class="-mob-share-weibo -hoofoo-share-weibo -hoofoo-share-ui-button"><i class="fa fa-weibo" aria-hidden="true"></i></div>
-    <div class="-mob-share-weixin -hoofoo-share-weixin -hoofoo-share-ui-button"><i class="fa fa-weixin" aria-hidden="true"></i></div>
-    <div class="-mob-share-qq -hoofoo-share-qq -hoofoo-share-ui-button"><i class="fa fa-qq" aria-hidden="true"></i></div>
-    <div class="-mob-share-twitter -hoofoo-share-twitter -hoofoo-share-ui-button"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-    <div class="-hoofoo-share-more -hoofoo-share-ui-button -mob-share-open"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
-</div>
-<div class="-mob-share-ui" style="display: none">
-    <ul class="-mob-share-list">
-        <li class="-mob-share-weibo"><p>新浪微博</p></li>
-        <li class="-mob-share-weixin"><p>微信</p></li>
-        <li class="-mob-share-qzone"><p>QQ空间</p></li>
-        <li class="-mob-share-qq"><p>QQ好友</p></li>
-        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
-        <li class="-mob-share-renren"><p>人人网</p></li>
-        <li class="-mob-share-kaixin"><p>开心网</p></li>
-        <li class="-mob-share-douban"><p>豆瓣</p></li>
-        <li class="-mob-share-youdao"><p>有道云笔记</p></li>
-        <li class="-mob-share-mingdao"><p>明道</p></li>
-        <li class="-mob-share-pengyou"><p>朋友网</p></li>
-        <li class="-mob-share-facebook"><p>Facebook</p></li>
-        <li class="-mob-share-twitter"><p>Twitter</p></li>
-        <li class="-mob-share-pocket"><p>Pocket</p></li>
-        <li class="-mob-share-google"><p>Google+</p></li>
-        <li class="-mob-share-tumblr"><p>Tumblr</p></li>
-        <li class="-mob-share-instapaper"><p>Instapaper</p></li>
-        <li class="-mob-share-linkedin"><p>Linkedin</p></li>
-    </ul>
-    <div class="-mob-share-close">取消</div>
-</div>
-<div class="-mob-share-ui-bg"></div>
-<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=26bd318095f14"></script>
-<!--MOB SHARE END-->
-
     </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
@@ -639,15 +368,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzQyMy85OTc5"></div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -670,17 +390,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -823,22 +534,6 @@ show_date_time();
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、添加UIViewAlertForUnsatisfiableConstraints断点"><span class="nav-number">1.</span> <span class="nav-text">一、添加UIViewAlertForUnsatisfiableConstraints断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、定位约束警告冲突"><span class="nav-number">2.</span> <span class="nav-text">二、定位约束警告冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、解决冲突"><span class="nav-number">3.</span> <span class="nav-text">三、解决冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -998,10 +693,6 @@ show_date_time();
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
@@ -1030,17 +721,6 @@ show_date_time();
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 
@@ -1492,23 +1172,6 @@ show_date_time();
 
   
   
-  <script type="text/javascript">
-  wpac_init = window.wpac_init || [];
-  wpac_init.push({widget: 'Rating', id: 12509,
-    el: 'wpac-rating',
-    color: 'fc6423'
-  });
-  (function() {
-    if ('WIDGETPACK_LOADED' in window) return;
-    WIDGETPACK_LOADED = true;
-    var mc = document.createElement('script');
-    mc.type = 'text/javascript';
-    mc.async = true;
-    mc.src = '//embed.widgetpack.com/widget.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-  })();
-  </script>
-
 
   
 

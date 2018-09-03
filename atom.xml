@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blogwenbo.com/"/>
-  <updated>2018-08-27T15:42:05.884Z</updated>
+  <updated>2018-09-03T15:56:06.369Z</updated>
   <id>http://blogwenbo.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CocoaPods进阶：制作公有库</title>
+    <link href="http://blogwenbo.com/2018/09/03/CocoaPods%E8%BF%9B%E9%98%B6%EF%BC%9A%E5%88%B6%E4%BD%9C%E5%85%AC%E6%9C%89%E5%BA%93/"/>
+    <id>http://blogwenbo.com/2018/09/03/CocoaPods进阶：制作公有库/</id>
+    <published>2018-09-03T13:35:29.000Z</published>
+    <updated>2018-09-03T15:56:06.369Z</updated>
+    
+    <content type="html"><![CDATA[<p class="description"></p><a id="more"></a><h3 id="一、-前言"><a href="#一、-前言" class="headerlink" title="一、 前言"></a>一、 前言</h3><p>在<a href="http://blogwenbo.com/2018/08/13/CocoaPods%E8%BF%9B%E9%98%B6%EF%BC%9A%E8%AF%A6%E8%A7%A3%E7%A7%81%E6%9C%89%E5%BA%93%E5%88%B6%E4%BD%9C/">CocoaPods进阶：详解私有库制作</a>这篇博客中，讲解记录了cocoapods使用<code>pod lib create [projectname]</code>命令模板化创建pod私有库，这篇博客主要讲解cocoapods制作共有库的过程。这里，我不在使用模板化方式创建，而是用原来在GitHub上已经提交过的项目（如果你舍不得获得的star，最好采用这种方式啦，😆）。自己也是参照博客资料，本来以为自己有了制作私有库的基础，制作共有库会没那么多的坑，但自己还是折腾了一晚上，好了，不多说了，开始讲解共有库的制作吧！</p><h3 id="二、目录"><a href="#二、目录" class="headerlink" title="二、目录"></a>二、目录</h3><blockquote><p>1、创建spec文件</p><p>2、编辑podspec文件</p><p>3、本地库验证</p><p>4、推送打标签</p><p>5、验证podspec文件</p><p>6、注册，推送podspec到cocoapods，搜索验证</p></blockquote><h3 id="三、具体步骤"><a href="#三、具体步骤" class="headerlink" title="三、具体步骤"></a>三、具体步骤</h3><p><strong>1、创建spec文件</strong><br>在<code>xxxx.xcodeproj</code>同级目录下，创建podspec文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod spec create WBHUDManager</span><br></pre></td></tr></table></figure><p>创建成功之后如下：</p><p><img src="https://ws1.sinaimg.cn/large/0069RVTdly1fuwp01rvz4j30ei0e8q59.jpg" alt=""></p><p><strong>注意</strong>：</p><p>这里新创建的<strong>podspec</strong>最好要和<strong>LICENSE</strong>、<strong>README.md</strong>在同级目录，自己在这里也折腾了许久，头一次用非模板方式，也踩了不少的坑。这里一定要注意哦。</p><p><strong>2、编辑podspec文件**</strong></p><p>用终端或者记事本编辑podspec文件，下面是我配置<strong>WBHUDManager.podspec</strong>，这里我也不做详细的介绍了，在我讲解的私有库制作博客，有对每个属性的详细描述，在网上也能轻易的查阅到相关的资料。</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Pod::Spec.new <span class="keyword">do</span> <span class="params">|s|</span></span><br><span class="line">  s.name             = <span class="string">'WBHUDManager'</span></span><br><span class="line">  s.version          = <span class="string">'1.0.0'</span></span><br><span class="line">  s.summary          = <span class="string">'iOS 基于SVProgressHUD、MBProgressHUD提示框封装'</span></span><br><span class="line">  s.homepage         = <span class="string">'https://github.com/wenmobo/WBHUDManager'</span></span><br><span class="line">  s.license          = &#123; <span class="symbol">:type</span> =&gt; <span class="string">'MIT'</span>, <span class="symbol">:file</span> =&gt; <span class="string">'LICENSE'</span> &#125;</span><br><span class="line">  s.author           = &#123; <span class="string">'wenmobo'</span> =&gt; <span class="string">'wenmobo2018@gmail.com'</span> &#125;</span><br><span class="line">  s.source           = &#123; <span class="symbol">:git</span> =&gt; <span class="string">'https://github.com/wenmobo/WBHUDManager.git'</span>, <span class="symbol">:tag</span> =&gt; s.version.to_s &#125;</span><br><span class="line">  s.ios.deployment_target = <span class="string">'8.0'</span></span><br><span class="line">  s.requires_arc = <span class="literal">true</span></span><br><span class="line">  s.source_files =  <span class="string">'WBHUDManager/WBHUDManager.h'</span></span><br><span class="line">  s.frameworks = <span class="string">'UIKit'</span></span><br><span class="line">  </span><br><span class="line">  s.subspec <span class="string">'SVProgressHUDWBAddtional'</span> <span class="keyword">do</span> <span class="params">|ss|</span></span><br><span class="line">      ss.source_files = <span class="string">'WBHUDManager/SVProgressHUDWBAddtional/*.&#123;h,m&#125;'</span></span><br><span class="line">      ss.dependency <span class="string">'SVProgressHUD'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  </span><br><span class="line">  s.subspec <span class="string">'MBProgressHUDWBAddtional'</span> <span class="keyword">do</span> <span class="params">|ss|</span></span><br><span class="line">      ss.source_files = <span class="string">'WBHUDManager/MBProgressHUDWBAddtional/*.&#123;h,m&#125;'</span></span><br><span class="line">      ss.resource = <span class="string">'WBHUDManager/MBProgressHUDWBAddtional/MBProgressHUD.bundle'</span></span><br><span class="line">      ss.dependency <span class="string">'MBProgressHUD'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><p><strong>3、本地库验证</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod lib lint WBHUDManager.podspec</span><br></pre></td></tr></table></figure><p>如果有警告，需要根据提示内容解决警告，忽略警告</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod lib lint WBHUDManager.podspec --allow-warnings</span><br></pre></td></tr></table></figure><p><strong>4、推送打标签</strong></p><p>由于这里我之前已经推送到远程了，所以只需要打标签就可了，注意要和WBHUDManager.podspec中version保持一致：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git tag -m &apos;release version 1.0.0&apos; 1.0.0</span><br><span class="line"></span><br><span class="line">git push origin 1.0.0 </span><br><span class="line">或者</span><br><span class="line">git push --tags</span><br></pre></td></tr></table></figure><p><strong>5、验证podspec文件</strong></p><p>推送标签之后，需对WBHUDManager.podspec进行验证</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod spec lint WBHUDManager.podspec</span><br></pre></td></tr></table></figure><p><strong>6、注册，推送podspec到cocoapods，验证</strong></p><p>验证通过之后，需要使用邮箱注册cocoapods，终端输入：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pod trunk register [email] ‘用户名’ --description=&apos;MacBook Pro&apos;</span><br><span class="line"></span><br><span class="line">example</span><br><span class="line">pod trunk register 123@qq.com &apos;wenbo&apos; --description=&apos;MacBook Pro&apos;</span><br></pre></td></tr></table></figure><p>之后会给你发送一条邮箱，进行确认，这里的-<strong>-description=’MacBook Pro’</strong>可以省略</p><p>查看个人信息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk me</span><br></pre></td></tr></table></figure><p><img src="https://ws3.sinaimg.cn/large/0069RVTdly1fuwpleoxwyj30vk074wfw.jpg" alt=""></p><p>推送podspec到<strong>cocoapods</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk push WBHUDManager.podspec</span><br></pre></td></tr></table></figure><p>推送成功之后，终端输出如下</p><p><img src="https://ws1.sinaimg.cn/large/0069RVTdly1fuwpojsca1j30v60mcq70.jpg" alt=""></p><p>之后我们可以搜索验证</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod search WBHUDManager</span><br></pre></td></tr></table></figure><p><img src="https://ws1.sinaimg.cn/large/0069RVTdly1fuwpq0w8uvj30vq0awtau.jpg" alt=""></p><p>哈哈，已经发布成功啦，是不是很开心啦☺️。</p><h3 id="四、问题解决"><a href="#四、问题解决" class="headerlink" title="四、问题解决"></a>四、问题解决</h3><ul><li><p>发布成功之后搜索不到</p></li><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//删除本地索引</span><br><span class="line">rm ~/Library/Caches/CocoaPods/search_index.json</span><br><span class="line"></span><br><span class="line">//搜索</span><br><span class="line">pod search [库名]</span><br><span class="line"></span><br><span class="line">//更新索引</span><br><span class="line">pod repo update</span><br></pre></td></tr></table></figure></li></ul><h3 id="五、打广告"><a href="#五、打广告" class="headerlink" title="五、打广告"></a>五、打广告</h3><blockquote><p>哈哈，最后也为自己打波广告吧，这篇博客使用的例子是自己基于<a href="https://github.com/jdg/MBProgressHUD" target="_blank" rel="noopener">MBProgressHUD</a>、<a href="https://github.com/SVProgressHUD/SVProgressHUD" target="_blank" rel="noopener">SVProgressHUD</a>封装的一个提示框架，支持超多自定义属性设置，HUD的状态切换，显示完成回调，这也是我发布的第一个公有库，如果有写的不好的地方，请多多包涵。喜欢的朋友记得<strong>star</strong>鼓励下哟，最后贴出GitHub地址吧：</p></blockquote><p><a href="https://github.com/wenmobo/WBHUDManager" target="_blank" rel="noopener">WBHUDManager</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p class=&quot;description&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
+    
+    
+      <category term="CocoaPods" scheme="http://blogwenbo.com/tags/CocoaPods/"/>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
+    
+      <category term="GitHub" scheme="http://blogwenbo.com/tags/GitHub/"/>
+    
+      <category term="MBProgressHUD" scheme="http://blogwenbo.com/tags/MBProgressHUD/"/>
+    
+      <category term="SVProgressHUD" scheme="http://blogwenbo.com/tags/SVProgressHUD/"/>
+    
+  </entry>
   
   <entry>
     <title>WKWebView高度自适应三种方式</title>
@@ -62,9 +92,9 @@
       <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
-    
       <category term="CocoaPods" scheme="http://blogwenbo.com/tags/CocoaPods/"/>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
     
       <category term="GitHub" scheme="http://blogwenbo.com/tags/GitHub/"/>
     
@@ -90,11 +120,11 @@
       <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
-    
       <category term="CocoaPods" scheme="http://blogwenbo.com/tags/CocoaPods/"/>
     
       <category term="MAC" scheme="http://blogwenbo.com/tags/MAC/"/>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
     
   </entry>
   
@@ -170,11 +200,11 @@
     
       <category term="GitHub" scheme="http://blogwenbo.com/tags/GitHub/"/>
     
+      <category term="MBProgressHUD" scheme="http://blogwenbo.com/tags/MBProgressHUD/"/>
+    
       <category term="Objective-C" scheme="http://blogwenbo.com/tags/Objective-C/"/>
     
       <category term="Swift" scheme="http://blogwenbo.com/tags/Swift/"/>
-    
-      <category term="MBProgressHUD" scheme="http://blogwenbo.com/tags/MBProgressHUD/"/>
     
   </entry>
   
@@ -244,9 +274,9 @@
       <category term="Terminal" scheme="http://blogwenbo.com/categories/Terminal/"/>
     
     
-      <category term="Terminal" scheme="http://blogwenbo.com/tags/Terminal/"/>
-    
       <category term="MAC" scheme="http://blogwenbo.com/tags/MAC/"/>
+    
+      <category term="Terminal" scheme="http://blogwenbo.com/tags/Terminal/"/>
     
       <category term="item2" scheme="http://blogwenbo.com/tags/item2/"/>
     
@@ -436,9 +466,9 @@
       <category term="Hexo" scheme="http://blogwenbo.com/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="http://blogwenbo.com/tags/Hexo/"/>
-    
       <category term="GitHub" scheme="http://blogwenbo.com/tags/GitHub/"/>
+    
+      <category term="Hexo" scheme="http://blogwenbo.com/tags/Hexo/"/>
     
       <category term="GitPages" scheme="http://blogwenbo.com/tags/GitPages/"/>
     

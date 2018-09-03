@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="iOS,Chisel,Xcode,Objective-C,Swift," />
+  <meta name="keywords" content="CocoaPods,iOS,GitHub,MBProgressHUD,SVProgressHUD," />
 
 
 
@@ -101,21 +101,20 @@
 
 
 
-<meta name="description" content="在做项目的时候，无意间看到自动布局约束警告，开始也也觉得没什么，虽然有警告，但并不影响UI展示效果。但是越来越有代码洁癖的我，也忍受不了控制台输出一大堆约束警告Log，于是就查阅如何定位解决约束冲突，同时自己也记录下来。下面开始介绍具体操作步骤吧。">
-<meta name="keywords" content="iOS,Chisel,Xcode,Objective-C,Swift">
+<meta name="keywords" content="CocoaPods,iOS,GitHub,MBProgressHUD,SVProgressHUD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS定位处理约束冲突">
-<meta property="og:url" content="http://blogwenbo.com/2018/07/08/iOS定位处理约束冲突/index.html">
+<meta property="og:title" content="CocoaPods进阶：制作公有库">
+<meta property="og:url" content="http://blogwenbo.com/2018/09/03/CocoaPods进阶：制作公有库/index.html">
 <meta property="og:site_name" content="Mr.Wen">
-<meta property="og:description" content="在做项目的时候，无意间看到自动布局约束警告，开始也也觉得没什么，虽然有警告，但并不影响UI展示效果。但是越来越有代码洁癖的我，也忍受不了控制台输出一大堆约束警告Log，于是就查阅如何定位解决约束冲突，同时自己也记录下来。下面开始介绍具体操作步骤吧。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace3a0af6?w=428&h=226&f=png&s=37641">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace93dcbb?w=998&h=514&f=png&s=129745">
-<meta property="og:updated_time" content="2018-07-08T04:03:16.299Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdly1fuwp01rvz4j30ei0e8q59.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/0069RVTdly1fuwpleoxwyj30vk074wfw.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdly1fuwpojsca1j30v60mcq70.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/0069RVTdly1fuwpq0w8uvj30vq0awtau.jpg">
+<meta property="og:updated_time" content="2018-09-03T15:56:06.369Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS定位处理约束冲突">
-<meta name="twitter:description" content="在做项目的时候，无意间看到自动布局约束警告，开始也也觉得没什么，虽然有警告，但并不影响UI展示效果。但是越来越有代码洁癖的我，也忍受不了控制台输出一大堆约束警告Log，于是就查阅如何定位解决约束冲突，同时自己也记录下来。下面开始介绍具体操作步骤吧。">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace3a0af6?w=428&h=226&f=png&s=37641">
+<meta name="twitter:title" content="CocoaPods进阶：制作公有库">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/0069RVTdly1fuwp01rvz4j30ei0e8q59.jpg">
 
 
 
@@ -145,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="http://blogwenbo.com/2018/07/08/iOS定位处理约束冲突/"/>
+  <link rel="canonical" href="http://blogwenbo.com/2018/09/03/CocoaPods进阶：制作公有库/"/>
 
 
 
 
 
-  <title>iOS定位处理约束冲突 | Mr.Wen</title>
+  <title>CocoaPods进阶：制作公有库 | Mr.Wen</title>
   
 
 
@@ -332,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blogwenbo.com/2018/07/08/iOS定位处理约束冲突/">
+    <link itemprop="mainEntityOfPage" href="http://blogwenbo.com/2018/09/03/CocoaPods进阶：制作公有库/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Wen">
@@ -349,7 +348,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS定位处理约束冲突</h1>
+          <h1 class="post-title" itemprop="name headline">CocoaPods进阶：制作公有库</h1>
         
 
         <div class="post-meta">
@@ -361,8 +360,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-08T11:58:08+08:00">
-                2018-07-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T21:35:29+08:00">
+                2018-09-03
               </time>
             
 
@@ -401,7 +400,7 @@
 
           
           
-             <span id="/2018/07/08/iOS定位处理约束冲突/" class="leancloud_visitors" data-flag-title="iOS定位处理约束冲突">
+             <span id="/2018/09/03/CocoaPods进阶：制作公有库/" class="leancloud_visitors" data-flag-title="CocoaPods进阶：制作公有库">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -426,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  321
+                  961
                 </span>
               
 
@@ -442,16 +441,12 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
           
 
-          
-              <div class="post-description">
-                  在做项目的时候，无意间看到自动布局约束警告，开始也也觉得没什么，虽然有警告，但并不影响UI展示效果。但是越来越有代码洁癖的我，也忍受不了控制台输出一大堆约束警告Log，于是就查阅如何定位解决约束冲突，同时自己也记录下来。下面开始介绍具体操作步骤吧。
-              </div>
           
 
         </div>
@@ -470,32 +465,59 @@
         <p class="description"></p>
 
 <a id="more"></a>
-<h3 id="一、添加UIViewAlertForUnsatisfiableConstraints断点"><a href="#一、添加UIViewAlertForUnsatisfiableConstraints断点" class="headerlink" title="一、添加UIViewAlertForUnsatisfiableConstraints断点"></a>一、添加UIViewAlertForUnsatisfiableConstraints断点</h3><ul>
-<li>添加<strong>Symbolic Breakpoints</strong><br><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace3a0af6?w=428&amp;h=226&amp;f=png&amp;s=37641" alt="屏幕快照 2018-06-04 下午2.44.35.png"></li>
-<li><p>编辑断点symbol填入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UIViewAlertForUnsatisfiableConstraints</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加控制台打印action</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">po [[UIWindow keyWindow] _autolayoutTrace]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace93dcbb?w=998&amp;h=514&amp;f=png&amp;s=129745" alt="屏幕快照 2018-06-04 下午2.44.50.png"></p>
-<h3 id="二、定位约束警告冲突"><a href="#二、定位约束警告冲突" class="headerlink" title="二、定位约束警告冲突"></a>二、定位约束警告冲突</h3><ul>
-<li><p>添加好断点之后，当界面有约束冲突，就会触发断点，控制打印如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[LayoutConstraints] Unable to simultaneously satisfy constraints.</span><br><span class="line">	Probably at least one of the constraints in the following list is one you don&apos;t want. </span><br><span class="line">	Try this: </span><br><span class="line">		(1) look at each constraint and try to figure out which you don&apos;t expect; </span><br><span class="line">		(2) find the code that added the unwanted constraint or constraints and fix it. </span><br><span class="line">(</span><br><span class="line">	&lt;MASLayoutConstraint:0x604000ab04a0 UIButton:0x7faf99f04010.width == 40&gt;,</span><br><span class="line">	&lt;MASLayoutConstraint:0x604000ab66e0 UIButton:0x7faf99f04010.left == CYBButtonView:0x7faf99f83360.left + 10&gt;,</span><br><span class="line">	&lt;MASLayoutConstraint:0x604000abaa00 UILabel:0x7faf99f5f8e0.left == UIButton:0x7faf99f04010.right&gt;,</span><br><span class="line">	&lt;MASLayoutConstraint:0x604000abd580 UILabel:0x7faf99f5f8e0.left == CYBButtonView:0x7faf99f83360.left + 15&gt;,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">Will attempt to recover by breaking constraint </span><br><span class="line">&lt;MASLayoutConstraint:0x604000ab04a0 UIButton:0x7faf99f04010.width == 40&gt;</span><br><span class="line"></span><br><span class="line">Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.</span><br><span class="line">The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in &lt;UIKit/UIView.h&gt; may also be helpful.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>根据提示，找到约束有问题的控件地址<strong>0x7faf99f04010</strong>，然后全局搜索，就能找到具体是哪个控件</p>
-</li>
-<li>如果控制台打印不够直观看出是哪个控件约束有问题，我们可以通过 LLDB命令工具<a href="https://github.com/facebook/chisel" target="_blank" rel="noopener">chisel</a>定位寻找。</li>
-</ul>
-<h3 id="三、解决冲突"><a href="#三、解决冲突" class="headerlink" title="三、解决冲突"></a>三、解决冲突</h3><p>通常解决冲突的方法有：</p>
-<blockquote>
-<ul>
-<li>删除多余约束</li>
-<li>修改约束优先级</li>
-</ul>
+<h3 id="一、-前言"><a href="#一、-前言" class="headerlink" title="一、 前言"></a>一、 前言</h3><p>在<a href="http://blogwenbo.com/2018/08/13/CocoaPods%E8%BF%9B%E9%98%B6%EF%BC%9A%E8%AF%A6%E8%A7%A3%E7%A7%81%E6%9C%89%E5%BA%93%E5%88%B6%E4%BD%9C/">CocoaPods进阶：详解私有库制作</a>这篇博客中，讲解记录了cocoapods使用<code>pod lib create [projectname]</code>命令模板化创建pod私有库，这篇博客主要讲解cocoapods制作共有库的过程。这里，我不在使用模板化方式创建，而是用原来在GitHub上已经提交过的项目（如果你舍不得获得的star，最好采用这种方式啦，😆）。自己也是参照博客资料，本来以为自己有了制作私有库的基础，制作共有库会没那么多的坑，但自己还是折腾了一晚上，好了，不多说了，开始讲解共有库的制作吧！</p>
+<h3 id="二、目录"><a href="#二、目录" class="headerlink" title="二、目录"></a>二、目录</h3><blockquote>
+<p>1、创建spec文件</p>
+<p>2、编辑podspec文件</p>
+<p>3、本地库验证</p>
+<p>4、推送打标签</p>
+<p>5、验证podspec文件</p>
+<p>6、注册，推送podspec到cocoapods，搜索验证</p>
 </blockquote>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>1、<a href="https://stackoverflow.com/questions/26389273/how-to-trap-on-uiviewalertforunsatisfiableconstraints" target="_blank" rel="noopener">How to trap on UIViewAlertForUnsatisfiableConstraints?</a></p>
+<h3 id="三、具体步骤"><a href="#三、具体步骤" class="headerlink" title="三、具体步骤"></a>三、具体步骤</h3><p><strong>1、创建spec文件</strong><br>在<code>xxxx.xcodeproj</code>同级目录下，创建podspec文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod spec create WBHUDManager</span><br></pre></td></tr></table></figure>
+<p>创建成功之后如下：</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdly1fuwp01rvz4j30ei0e8q59.jpg" alt=""></p>
+<p><strong>注意</strong>：</p>
+<p>这里新创建的<strong>podspec</strong>最好要和<strong>LICENSE</strong>、<strong>README.md</strong>在同级目录，自己在这里也折腾了许久，头一次用非模板方式，也踩了不少的坑。这里一定要注意哦。</p>
+<p><strong>2、编辑podspec文件**</strong></p>
+<p>用终端或者记事本编辑podspec文件，下面是我配置<strong>WBHUDManager.podspec</strong>，这里我也不做详细的介绍了，在我讲解的私有库制作博客，有对每个属性的详细描述，在网上也能轻易的查阅到相关的资料。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Pod::Spec.new <span class="keyword">do</span> <span class="params">|s|</span></span><br><span class="line">  s.name             = <span class="string">'WBHUDManager'</span></span><br><span class="line">  s.version          = <span class="string">'1.0.0'</span></span><br><span class="line">  s.summary          = <span class="string">'iOS 基于SVProgressHUD、MBProgressHUD提示框封装'</span></span><br><span class="line">  s.homepage         = <span class="string">'https://github.com/wenmobo/WBHUDManager'</span></span><br><span class="line">  s.license          = &#123; <span class="symbol">:type</span> =&gt; <span class="string">'MIT'</span>, <span class="symbol">:file</span> =&gt; <span class="string">'LICENSE'</span> &#125;</span><br><span class="line">  s.author           = &#123; <span class="string">'wenmobo'</span> =&gt; <span class="string">'wenmobo2018@gmail.com'</span> &#125;</span><br><span class="line">  s.source           = &#123; <span class="symbol">:git</span> =&gt; <span class="string">'https://github.com/wenmobo/WBHUDManager.git'</span>, <span class="symbol">:tag</span> =&gt; s.version.to_s &#125;</span><br><span class="line">  s.ios.deployment_target = <span class="string">'8.0'</span></span><br><span class="line">  s.requires_arc = <span class="literal">true</span></span><br><span class="line">  s.source_files =  <span class="string">'WBHUDManager/WBHUDManager.h'</span></span><br><span class="line">  s.frameworks = <span class="string">'UIKit'</span></span><br><span class="line">  </span><br><span class="line">  s.subspec <span class="string">'SVProgressHUDWBAddtional'</span> <span class="keyword">do</span> <span class="params">|ss|</span></span><br><span class="line">      ss.source_files = <span class="string">'WBHUDManager/SVProgressHUDWBAddtional/*.&#123;h,m&#125;'</span></span><br><span class="line">      ss.dependency <span class="string">'SVProgressHUD'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">  </span><br><span class="line">  s.subspec <span class="string">'MBProgressHUDWBAddtional'</span> <span class="keyword">do</span> <span class="params">|ss|</span></span><br><span class="line">      ss.source_files = <span class="string">'WBHUDManager/MBProgressHUDWBAddtional/*.&#123;h,m&#125;'</span></span><br><span class="line">      ss.resource = <span class="string">'WBHUDManager/MBProgressHUDWBAddtional/MBProgressHUD.bundle'</span></span><br><span class="line">      ss.dependency <span class="string">'MBProgressHUD'</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p><strong>3、本地库验证</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod lib lint WBHUDManager.podspec</span><br></pre></td></tr></table></figure>
+<p>如果有警告，需要根据提示内容解决警告，忽略警告</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod lib lint WBHUDManager.podspec --allow-warnings</span><br></pre></td></tr></table></figure>
+<p><strong>4、推送打标签</strong></p>
+<p>由于这里我之前已经推送到远程了，所以只需要打标签就可了，注意要和WBHUDManager.podspec中version保持一致：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git tag -m &apos;release version 1.0.0&apos; 1.0.0</span><br><span class="line"></span><br><span class="line">git push origin 1.0.0 </span><br><span class="line">或者</span><br><span class="line">git push --tags</span><br></pre></td></tr></table></figure>
+<p><strong>5、验证podspec文件</strong></p>
+<p>推送标签之后，需对WBHUDManager.podspec进行验证</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod spec lint WBHUDManager.podspec</span><br></pre></td></tr></table></figure>
+<p><strong>6、注册，推送podspec到cocoapods，验证</strong></p>
+<p>验证通过之后，需要使用邮箱注册cocoapods，终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pod trunk register [email] ‘用户名’ --description=&apos;MacBook Pro&apos;</span><br><span class="line"></span><br><span class="line">example</span><br><span class="line">pod trunk register 123@qq.com &apos;wenbo&apos; --description=&apos;MacBook Pro&apos;</span><br></pre></td></tr></table></figure>
+<p>之后会给你发送一条邮箱，进行确认，这里的-<strong>-description=’MacBook Pro’</strong>可以省略</p>
+<p>查看个人信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk me</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws3.sinaimg.cn/large/0069RVTdly1fuwpleoxwyj30vk074wfw.jpg" alt=""></p>
+<p>推送podspec到<strong>cocoapods</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod trunk push WBHUDManager.podspec</span><br></pre></td></tr></table></figure>
+<p>推送成功之后，终端输出如下</p>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdly1fuwpojsca1j30v60mcq70.jpg" alt=""></p>
+<p>之后我们可以搜索验证</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod search WBHUDManager</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/0069RVTdly1fuwpq0w8uvj30vq0awtau.jpg" alt=""></p>
+<p>哈哈，已经发布成功啦，是不是很开心啦☺️。</p>
+<h3 id="四、问题解决"><a href="#四、问题解决" class="headerlink" title="四、问题解决"></a>四、问题解决</h3><ul>
+<li><p>发布成功之后搜索不到</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//删除本地索引</span><br><span class="line">rm ~/Library/Caches/CocoaPods/search_index.json</span><br><span class="line"></span><br><span class="line">//搜索</span><br><span class="line">pod search [库名]</span><br><span class="line"></span><br><span class="line">//更新索引</span><br><span class="line">pod repo update</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="五、打广告"><a href="#五、打广告" class="headerlink" title="五、打广告"></a>五、打广告</h3><blockquote>
+<p>哈哈，最后也为自己打波广告吧，这篇博客使用的例子是自己基于<a href="https://github.com/jdg/MBProgressHUD" target="_blank" rel="noopener">MBProgressHUD</a>、<a href="https://github.com/SVProgressHUD/SVProgressHUD" target="_blank" rel="noopener">SVProgressHUD</a>封装的一个提示框架，支持超多自定义属性设置，HUD的状态切换，显示完成回调，这也是我发布的第一个公有库，如果有写的不好的地方，请多多包涵。喜欢的朋友记得<strong>star</strong>鼓励下哟，最后贴出GitHub地址吧：</p>
+</blockquote>
+<p><a href="https://github.com/wenmobo/WBHUDManager" target="_blank" rel="noopener">WBHUDManager</a></p>
 
       
     </div>
@@ -529,15 +551,15 @@
       
         <div class="post-tags">
           
+            <a href="/tags/CocoaPods/" rel="tag"><i class="fa fa-tag"></i> CocoaPods</a>
+          
             <a href="/tags/iOS/" rel="tag"><i class="fa fa-tag"></i> iOS</a>
           
-            <a href="/tags/Chisel/" rel="tag"><i class="fa fa-tag"></i> Chisel</a>
+            <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
           
-            <a href="/tags/Xcode/" rel="tag"><i class="fa fa-tag"></i> Xcode</a>
+            <a href="/tags/MBProgressHUD/" rel="tag"><i class="fa fa-tag"></i> MBProgressHUD</a>
           
-            <a href="/tags/Objective-C/" rel="tag"><i class="fa fa-tag"></i> Objective-C</a>
-          
-            <a href="/tags/Swift/" rel="tag"><i class="fa fa-tag"></i> Swift</a>
+            <a href="/tags/SVProgressHUD/" rel="tag"><i class="fa fa-tag"></i> SVProgressHUD</a>
           
         </div>
       
@@ -563,8 +585,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/08/Chisel-LLDB调试助手/" rel="next" title="Chisel-LLDB调试助手">
-                <i class="fa fa-chevron-left"></i> Chisel-LLDB调试助手
+              <a href="/2018/08/27/WKWebView高度自适应三种方式/" rel="next" title="WKWebView高度自适应三种方式">
+                <i class="fa fa-chevron-left"></i> WKWebView高度自适应三种方式
               </a>
             
           </div>
@@ -572,10 +594,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/08/Xcode无线真机调试/" rel="prev" title="Xcode无线真机调试">
-                Xcode无线真机调试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -833,7 +851,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、添加UIViewAlertForUnsatisfiableConstraints断点"><span class="nav-number">1.</span> <span class="nav-text">一、添加UIViewAlertForUnsatisfiableConstraints断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、定位约束警告冲突"><span class="nav-number">2.</span> <span class="nav-text">二、定位约束警告冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、解决冲突"><span class="nav-number">3.</span> <span class="nav-text">三、解决冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、-前言"><span class="nav-number">1.</span> <span class="nav-text">一、 前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、目录"><span class="nav-number">2.</span> <span class="nav-text">二、目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、具体步骤"><span class="nav-number">3.</span> <span class="nav-text">三、具体步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、问题解决"><span class="nav-number">4.</span> <span class="nav-text">四、问题解决</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、打广告"><span class="nav-number">5.</span> <span class="nav-text">五、打广告</span></a></li></ol></div>
             
 
           </div>
