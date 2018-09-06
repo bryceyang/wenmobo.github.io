@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="iOS,Chisel,Objective-C,Xcode,Swift," />
+  <meta name="keywords" content="iOS,CocoaPods,GitHub,Objective-C," />
 
 
 
@@ -101,21 +101,18 @@
 
 
 
-<meta name="description" content="在做项目的时候，无意间看到自动布局约束警告，开始也也觉得没什么，虽然有警告，但并不影响UI展示效果。但是越来越有代码洁癖的我，也忍受不了控制台输出一大堆约束警告Log，于是就查阅如何定位解决约束冲突，同时自己也记录下来。下面开始介绍具体操作步骤吧。">
-<meta name="keywords" content="iOS,Chisel,Objective-C,Xcode,Swift">
+<meta name="description" content="在日常开发过程中，我们也经常用到分类。分类（Category）是OC中的特有语法，它是表示一个指向分类的结构体的指针。原则上它只能增加方法，不能增加成员（实例）变量">
+<meta name="keywords" content="iOS,CocoaPods,GitHub,Objective-C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS定位处理约束冲突">
-<meta property="og:url" content="http://blogwenbo.com/2018/07/08/iOS定位处理约束冲突/index.html">
+<meta property="og:title" content="iOS-WBCategories">
+<meta property="og:url" content="http://blogwenbo.com/2018/07/08/WBCategoryKit/index.html">
 <meta property="og:site_name" content="Mr.Wen">
-<meta property="og:description" content="在做项目的时候，无意间看到自动布局约束警告，开始也也觉得没什么，虽然有警告，但并不影响UI展示效果。但是越来越有代码洁癖的我，也忍受不了控制台输出一大堆约束警告Log，于是就查阅如何定位解决约束冲突，同时自己也记录下来。下面开始介绍具体操作步骤吧。">
+<meta property="og:description" content="在日常开发过程中，我们也经常用到分类。分类（Category）是OC中的特有语法，它是表示一个指向分类的结构体的指针。原则上它只能增加方法，不能增加成员（实例）变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace3a0af6?w=428&h=226&f=png&s=37641">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace93dcbb?w=998&h=514&f=png&s=129745">
-<meta property="og:updated_time" content="2018-07-08T04:03:16.299Z">
+<meta property="og:updated_time" content="2018-09-06T14:36:33.269Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS定位处理约束冲突">
-<meta name="twitter:description" content="在做项目的时候，无意间看到自动布局约束警告，开始也也觉得没什么，虽然有警告，但并不影响UI展示效果。但是越来越有代码洁癖的我，也忍受不了控制台输出一大堆约束警告Log，于是就查阅如何定位解决约束冲突，同时自己也记录下来。下面开始介绍具体操作步骤吧。">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace3a0af6?w=428&h=226&f=png&s=37641">
+<meta name="twitter:title" content="iOS-WBCategories">
+<meta name="twitter:description" content="在日常开发过程中，我们也经常用到分类。分类（Category）是OC中的特有语法，它是表示一个指向分类的结构体的指针。原则上它只能增加方法，不能增加成员（实例）变量">
 
 
 
@@ -145,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://blogwenbo.com/2018/07/08/iOS定位处理约束冲突/"/>
+  <link rel="canonical" href="http://blogwenbo.com/2018/07/08/WBCategoryKit/"/>
 
 
 
 
 
-  <title>iOS定位处理约束冲突 | Mr.Wen</title>
+  <title>iOS-WBCategories | Mr.Wen</title>
   
 
 
@@ -332,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blogwenbo.com/2018/07/08/iOS定位处理约束冲突/">
+    <link itemprop="mainEntityOfPage" href="http://blogwenbo.com/2018/07/08/WBCategoryKit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.Wen">
@@ -349,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS定位处理约束冲突</h1>
+          <h1 class="post-title" itemprop="name headline">iOS-WBCategories</h1>
         
 
         <div class="post-meta">
@@ -361,7 +358,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-08T11:58:08+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-08T17:26:13+08:00">
                 2018-07-08
               </time>
             
@@ -401,7 +398,7 @@
 
           
           
-             <span id="/2018/07/08/iOS定位处理约束冲突/" class="leancloud_visitors" data-flag-title="iOS定位处理约束冲突">
+             <span id="/2018/07/08/WBCategoryKit/" class="leancloud_visitors" data-flag-title="iOS-WBCategories">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -426,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  321
+                  552
                 </span>
               
 
@@ -442,7 +439,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -450,7 +447,7 @@
 
           
               <div class="post-description">
-                  在做项目的时候，无意间看到自动布局约束警告，开始也也觉得没什么，虽然有警告，但并不影响UI展示效果。但是越来越有代码洁癖的我，也忍受不了控制台输出一大堆约束警告Log，于是就查阅如何定位解决约束冲突，同时自己也记录下来。下面开始介绍具体操作步骤吧。
+                  在日常开发过程中，我们也经常用到分类。分类（Category）是OC中的特有语法，它是表示一个指向分类的结构体的指针。原则上它只能增加方法，不能增加成员（实例）变量
               </div>
           
 
@@ -470,32 +467,61 @@
         <p class="description"></p>
 
 <a id="more"></a>
-<h3 id="一、添加UIViewAlertForUnsatisfiableConstraints断点"><a href="#一、添加UIViewAlertForUnsatisfiableConstraints断点" class="headerlink" title="一、添加UIViewAlertForUnsatisfiableConstraints断点"></a>一、添加UIViewAlertForUnsatisfiableConstraints断点</h3><ul>
-<li>添加<strong>Symbolic Breakpoints</strong><br><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace3a0af6?w=428&amp;h=226&amp;f=png&amp;s=37641" alt="屏幕快照 2018-06-04 下午2.44.35.png"></li>
-<li><p>编辑断点symbol填入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UIViewAlertForUnsatisfiableConstraints</span><br></pre></td></tr></table></figure>
+<h2 id="中文说明"><a href="#中文说明" class="headerlink" title="中文说明"></a>中文说明</h2><blockquote>
+<p>Some useful Objective-C ategories and Macro,that contain UIKit.framework、Foundation.framework、AVFoundation.framework、QuartzCore. framework、CoreTelephony.framework、WebKit.framework、MobileCoreServices.framework、Photos.framework、AssetsLibrary.framework、Accelerate.framework、ImageIO.framework、CoreText.framework、CoreGraphics.framework and so on,i will continue to tidy up updates.</p>
+</blockquote>
+<p> iOS 系统常用框架分类封装，开发常用宏定义，支持cocoapod集成，支持只集成子模块。持续更新中…</p>
+<h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><ul>
+<li>iOS 8+</li>
+<li>Xcode 8+</li>
+</ul>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><h3 id="Cocoapods安装"><a href="#Cocoapods安装" class="headerlink" title="Cocoapods安装"></a>Cocoapods安装</h3><ul>
+<li><p>安装所有分类文件</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod <span class="string">'WBCategoryKit'</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>添加控制台打印action</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">po [[UIWindow keyWindow] _autolayoutTrace]</span><br></pre></td></tr></table></figure>
+<li><p>集成子组件</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod <span class="string">'WBCategoryKit/UIKit'</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e857ace93dcbb?w=998&amp;h=514&amp;f=png&amp;s=129745" alt="屏幕快照 2018-06-04 下午2.44.50.png"></p>
-<h3 id="二、定位约束警告冲突"><a href="#二、定位约束警告冲突" class="headerlink" title="二、定位约束警告冲突"></a>二、定位约束警告冲突</h3><ul>
-<li><p>添加好断点之后，当界面有约束冲突，就会触发断点，控制打印如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[LayoutConstraints] Unable to simultaneously satisfy constraints.</span><br><span class="line">	Probably at least one of the constraints in the following list is one you don&apos;t want. </span><br><span class="line">	Try this: </span><br><span class="line">		(1) look at each constraint and try to figure out which you don&apos;t expect; </span><br><span class="line">		(2) find the code that added the unwanted constraint or constraints and fix it. </span><br><span class="line">(</span><br><span class="line">	&lt;MASLayoutConstraint:0x604000ab04a0 UIButton:0x7faf99f04010.width == 40&gt;,</span><br><span class="line">	&lt;MASLayoutConstraint:0x604000ab66e0 UIButton:0x7faf99f04010.left == CYBButtonView:0x7faf99f83360.left + 10&gt;,</span><br><span class="line">	&lt;MASLayoutConstraint:0x604000abaa00 UILabel:0x7faf99f5f8e0.left == UIButton:0x7faf99f04010.right&gt;,</span><br><span class="line">	&lt;MASLayoutConstraint:0x604000abd580 UILabel:0x7faf99f5f8e0.left == CYBButtonView:0x7faf99f83360.left + 15&gt;,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">Will attempt to recover by breaking constraint </span><br><span class="line">&lt;MASLayoutConstraint:0x604000ab04a0 UIButton:0x7faf99f04010.width == 40&gt;</span><br><span class="line"></span><br><span class="line">Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.</span><br><span class="line">The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in &lt;UIKit/UIView.h&gt; may also be helpful.</span><br></pre></td></tr></table></figure>
+<p>或者<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod <span class="string">'WBCategoryKit/UIKit/WKWebView'</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="手动集成"><a href="#手动集成" class="headerlink" title="手动集成"></a>手动集成</h3><p>将需要的分类文件拖入工程即可。</p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="Foundation"><a href="#Foundation" class="headerlink" title="Foundation"></a>Foundation</h3><ul>
+<li>NSObject     <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//swizzle 类方法</span><br><span class="line">+ (void)swizzleClassMethodWithOriginSel:(SEL)oriSel</span><br><span class="line">                            swizzledSel:(SEL)swiSel</span><br><span class="line">                              selfClass:(Class)selfClass;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>根据提示，找到约束有问题的控件地址<strong>0x7faf99f04010</strong>，然后全局搜索，就能找到具体是哪个控件</p>
-</li>
-<li>如果控制台打印不够直观看出是哪个控件约束有问题，我们可以通过 LLDB命令工具<a href="https://github.com/facebook/chisel" target="_blank" rel="noopener">chisel</a>定位寻找。</li>
 </ul>
-<h3 id="三、解决冲突"><a href="#三、解决冲突" class="headerlink" title="三、解决冲突"></a>三、解决冲突</h3><p>通常解决冲突的方法有：</p>
-<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//swizzle 实例方法 </span><br><span class="line">+ (void)swizzleInstanceMethodWithOriginSel:(SEL)oriSel</span><br><span class="line">                               swizzledSel:(SEL)swiSel</span><br><span class="line">                                 selfClass:(Class)selfClass;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>删除多余约束</li>
-<li>修改约束优先级</li>
+<li>NSDate    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//NSDateFormatter缓存 </span><br><span class="line">- (NSDateFormatter *)wb_dateFormatterWithFormat:(NSString *)format;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>//朋友圈时间格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (NSString *)compareCurrentTimeWithTimeString:(NSString *)timeString;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Macro"><a href="#Macro" class="headerlink" title="Macro"></a>Macro</h3><p>//设置平方字体PingFangSC<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#define kWB_PFR kWB_SYSTEM_VERSION_9_OR_LATER ? @&quot;PingFangSC-Regular&quot; : @&quot;PingFang SC&quot;</span><br><span class="line">#define kWB_PFR_FONT(s) [UIFont fontWithName:kWB_PFR size:s]</span><br></pre></td></tr></table></figure></p>
+<p>//主线程安全执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#ifndef dispatch_main_async_safe</span><br><span class="line">#define dispatch_main_async_safe(block) dispatch_queue_async_safe(dispatch_get_main_queue(), block)</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<p>//同步锁<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#define kWB_LOCK(lock) dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);</span><br><span class="line">#define kWB_UNLOCK(lock) dispatch_semaphore_signal(lock);</span><br></pre></td></tr></table></figure></p>
+<h3 id="UIKit"><a href="#UIKit" class="headerlink" title="UIKit"></a>UIKit</h3><ul>
+<li>WKWebView    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//获取某个标签的结点个数</span><br><span class="line">- (void)wb_nodeCountOfTag:(NSString *)tag</span><br><span class="line">completedHandler:(void (^) (int tagCount))completedHandler;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//获取网页中的图片 </span><br><span class="line">- (void)wb_getImages:(void (^) (NSArray *images))completedHandler;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//获取网页内容高度</span><br><span class="line">- (void)wb_getScrollHeight:(void (^) (CGFloat scrollHeight))completedHandler;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//为所有图片添加点击事件</span><br><span class="line">- (void)wb_addClickEventOnImg;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//根据id隐藏网页元素</span><br><span class="line">- (void)wb_hiddenElementById:(NSString *)idString;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>UIFont       </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//runtime字体适配</span><br><span class="line">+ (UIFont *)_wb_systemFontOfSize:(CGFloat)fontSize;</span><br><span class="line">+ (UIFont *)_wb_boldSystemFontOfSize:(CGFloat)fontSize;</span><br><span class="line">+ (UIFont *)_wb_fontWithName:(NSString *)fontName</span><br><span class="line">                        size:(CGFloat)fontSize;</span><br></pre></td></tr></table></figure>
+<p>更多分类使用方法，请查看<a href="https://github.com/wenmobo/WBCategoryKit" target="_blank" rel="noopener">WBCategoryKit</a>。</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>本库主要是记录自己积累学习的一个过程，最初在github创建这个工程的时候，我就在自己的博客中写道将来有一天将本库制作成pod公有库，如今完成了本库的制作，虽然在制作过程中遇到了很多的问题，但还是很有成就感。如过在使用过程中，有任何建议或者问题，可以通过以下方式联系我，十分感谢。</p>
+</li>
+</ul>
+<p>author：wenbo<br>     QQ：1050794513<br>  email：<a href="mailto:1050794513@qq.com" target="_blank" rel="noopener">1050794513@qq.com</a><br> 喜欢就❤️下鼓励下吧。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><blockquote>
+<ul>
+<li>2018-09-05 （1.0.2）： 修改podspec文件，支持三级目录。</li>
 </ul>
 </blockquote>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>1、<a href="https://stackoverflow.com/questions/26389273/how-to-trap-on-uiviewalertforunsatisfiableconstraints" target="_blank" rel="noopener">How to trap on UIViewAlertForUnsatisfiableConstraints?</a></p>
+<ul>
+<li><a href="https://www.jianshu.com/p/e917e7d95f69" target="_blank" rel="noopener">https://www.jianshu.com/p/e917e7d95f69</a>)</li>
+</ul>
 
       
     </div>
@@ -531,13 +557,11 @@
           
             <a href="/tags/iOS/" rel="tag"><i class="fa fa-tag"></i> iOS</a>
           
-            <a href="/tags/Chisel/" rel="tag"><i class="fa fa-tag"></i> Chisel</a>
+            <a href="/tags/CocoaPods/" rel="tag"><i class="fa fa-tag"></i> CocoaPods</a>
+          
+            <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
           
             <a href="/tags/Objective-C/" rel="tag"><i class="fa fa-tag"></i> Objective-C</a>
-          
-            <a href="/tags/Xcode/" rel="tag"><i class="fa fa-tag"></i> Xcode</a>
-          
-            <a href="/tags/Swift/" rel="tag"><i class="fa fa-tag"></i> Swift</a>
           
         </div>
       
@@ -563,8 +587,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/08/Chisel-LLDB调试助手/" rel="next" title="Chisel-LLDB调试助手">
-                <i class="fa fa-chevron-left"></i> Chisel-LLDB调试助手
+              <a href="/2018/07/08/MAC上iTerm-2安装与使用/" rel="next" title="MAC上iTerm 2安装与使用">
+                <i class="fa fa-chevron-left"></i> MAC上iTerm 2安装与使用
               </a>
             
           </div>
@@ -573,8 +597,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/08/Xcode无线真机调试/" rel="prev" title="Xcode无线真机调试">
-                Xcode无线真机调试 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/08/Mac-OS-X系统常用工具/" rel="prev" title="Mac OS X系统常用工具">
+                Mac OS X系统常用工具 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -833,7 +857,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、添加UIViewAlertForUnsatisfiableConstraints断点"><span class="nav-number">1.</span> <span class="nav-text">一、添加UIViewAlertForUnsatisfiableConstraints断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、定位约束警告冲突"><span class="nav-number">2.</span> <span class="nav-text">二、定位约束警告冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、解决冲突"><span class="nav-number">3.</span> <span class="nav-text">三、解决冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#中文说明"><span class="nav-number">1.</span> <span class="nav-text">中文说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Requirements"><span class="nav-number">2.</span> <span class="nav-text">Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation"><span class="nav-number">3.</span> <span class="nav-text">Installation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cocoapods安装"><span class="nav-number">3.1.</span> <span class="nav-text">Cocoapods安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动集成"><span class="nav-number">3.2.</span> <span class="nav-text">手动集成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage"><span class="nav-number">4.</span> <span class="nav-text">Usage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Foundation"><span class="nav-number">4.1.</span> <span class="nav-text">Foundation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Macro"><span class="nav-number">4.2.</span> <span class="nav-text">Macro</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UIKit"><span class="nav-number">4.3.</span> <span class="nav-text">UIKit</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">5.</span> <span class="nav-text">补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-number">6.</span> <span class="nav-text">更新</span></a></li></ol></div>
             
 
           </div>
