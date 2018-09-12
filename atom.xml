@@ -34,11 +34,11 @@
       <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
-    
       <category term="CocoaPods" scheme="http://blogwenbo.com/tags/CocoaPods/"/>
     
       <category term="GitHub" scheme="http://blogwenbo.com/tags/GitHub/"/>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
     
       <category term="Animation" scheme="http://blogwenbo.com/tags/Animation/"/>
     
@@ -62,8 +62,6 @@
       <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
-    
       <category term="CocoaPods" scheme="http://blogwenbo.com/tags/CocoaPods/"/>
     
       <category term="GitHub" scheme="http://blogwenbo.com/tags/GitHub/"/>
@@ -71,6 +69,8 @@
       <category term="MBProgressHUD" scheme="http://blogwenbo.com/tags/MBProgressHUD/"/>
     
       <category term="SVProgressHUD" scheme="http://blogwenbo.com/tags/SVProgressHUD/"/>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
     
   </entry>
   
@@ -120,11 +120,11 @@
       <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
-    
       <category term="CocoaPods" scheme="http://blogwenbo.com/tags/CocoaPods/"/>
     
       <category term="GitHub" scheme="http://blogwenbo.com/tags/GitHub/"/>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
     
       <category term="Git" scheme="http://blogwenbo.com/tags/Git/"/>
     
@@ -148,9 +148,9 @@
       <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
-    
       <category term="CocoaPods" scheme="http://blogwenbo.com/tags/CocoaPods/"/>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
     
       <category term="MAC" scheme="http://blogwenbo.com/tags/MAC/"/>
     
@@ -224,11 +224,11 @@
       <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
-    
       <category term="GitHub" scheme="http://blogwenbo.com/tags/GitHub/"/>
     
       <category term="MBProgressHUD" scheme="http://blogwenbo.com/tags/MBProgressHUD/"/>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
     
       <category term="Objective-C" scheme="http://blogwenbo.com/tags/Objective-C/"/>
     
@@ -278,11 +278,11 @@
       <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
-    
       <category term="CocoaPods" scheme="http://blogwenbo.com/tags/CocoaPods/"/>
     
       <category term="GitHub" scheme="http://blogwenbo.com/tags/GitHub/"/>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
     
       <category term="Objective-C" scheme="http://blogwenbo.com/tags/Objective-C/"/>
     
@@ -470,9 +470,9 @@
       <category term="iOS" scheme="http://blogwenbo.com/categories/iOS/"/>
     
     
-      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
-    
       <category term="GitHub" scheme="http://blogwenbo.com/tags/GitHub/"/>
+    
+      <category term="iOS" scheme="http://blogwenbo.com/tags/iOS/"/>
     
       <category term="Objective-C" scheme="http://blogwenbo.com/tags/Objective-C/"/>
     
