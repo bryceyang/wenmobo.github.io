@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="Mr.Wen">
 <meta property="og:description" content="好久没有更新博客了，自己也一直想写一些性能优化，APP瘦身的文章，现在就做下记录与分享，方便以后查阅。公司这段新需求不算太多，自己就抽时间，对APP安装包大小做了一些优化，优化后的成果还是很明显的，从之前的90M左右缩减到了40几M。网上还是很容易找到相关的文章，下面我总结下可以从哪几方面去做优化工作吧！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-04T10:56:51.203Z">
+<meta property="og:updated_time" content="2018-11-04T11:00:36.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS APP瘦身实践">
 <meta name="twitter:description" content="好久没有更新博客了，自己也一直想写一些性能优化，APP瘦身的文章，现在就做下记录与分享，方便以后查阅。公司这段新需求不算太多，自己就抽时间，对APP安装包大小做了一些优化，优化后的成果还是很明显的，从之前的90M左右缩减到了40几M。网上还是很容易找到相关的文章，下面我总结下可以从哪几方面去做优化工作吧！">
@@ -472,12 +472,10 @@
         <p class="description"></p>
 
 <a id="more"></a>
-<p>###一、前言</p>
-<blockquote>
+<h3 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h3><blockquote>
 <p>好久没有更新博客了，自己也一直想写一些性能优化，APP瘦身的文章，现在就做下记录与分享，方便以后查阅。公司这段新需求不算太多，自己就抽时间，对APP安装包大小做了一些优化，优化后的成果还是很明显的，从之前的90M左右缩减到了40几M。网上还是很容易找到相关的文章，下面我总结下可以从哪几方面去做优化工作吧！</p>
 </blockquote>
-<p>###二、图片资源优化</p>
-<ul>
+<h3 id="二、图片资源优化"><a href="#二、图片资源优化" class="headerlink" title="二、图片资源优化"></a>二、图片资源优化</h3><ul>
 <li><p>不看不知道，一看吓一跳，项目中的图片资源原来是如此占用大小，动不动一张图片就是好几兆，并且有很多还是没有用到的。找出项目中未用到的图片资源我们可以借助这款软件：</p>
 <p> <a href="https://github.com/tinymind/LSUnusedResources/raw/master/Release/LSUnusedResources.app.zip" target="_blank" rel="noopener">LSUnusedResources</a></p>
 <p>借助着款开源软件我们可以找出项目中没有用到的</p>
@@ -849,7 +847,7 @@ show_date_time();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#三、删除项目没有使用到的类"><span class="nav-number">1.</span> <span class="nav-text">三、删除项目没有使用到的类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、LinkMap文件分析"><span class="nav-number">2.</span> <span class="nav-text">四、LinkMap文件分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、移除模拟器支持文件"><span class="nav-number">3.</span> <span class="nav-text">五、移除模拟器支持文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">4.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、前言"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、图片资源优化"><span class="nav-number">2.</span> <span class="nav-text">二、图片资源优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、删除项目没有使用到的类"><span class="nav-number">3.</span> <span class="nav-text">三、删除项目没有使用到的类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、LinkMap文件分析"><span class="nav-number">4.</span> <span class="nav-text">四、LinkMap文件分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、移除模拟器支持文件"><span class="nav-number">5.</span> <span class="nav-text">五、移除模拟器支持文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">6.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
             
 
           </div>
