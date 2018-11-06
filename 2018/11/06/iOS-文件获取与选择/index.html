@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS,GitHub,iCloud," />
 
 
 
@@ -101,16 +101,18 @@
 
 
 
-<meta name="description" content="To strive, to seek, to find, and not to yield">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mr.Wen">
-<meta property="og:url" content="http://blogwenbo.com/tags/Shadowsocks/index.html">
+<meta name="description" content="最近开发遇到一个需求，就是要从手机客户端通过云信IM发送文件，最开始想到的是通过云信发送文件是没有问题的，但似乎获取从手机获取文件没那么方便，安卓手机是可以轻松去选取系统文件，iOS相对没那么开放，但这也是iOS相比安卓安全的原因之一。除了系统开发的图片文件和视频文件，就不能获取其他格式文件吗？答案是否定的，自己留意了微信，发现有发送文件功能，微信点击发送文件，就会跳转到一个系统提供的文件拾取界面">
+<meta name="keywords" content="iOS,GitHub,iCloud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 文件获取与选择">
+<meta property="og:url" content="http://blogwenbo.com/2018/11/06/iOS-文件获取与选择/index.html">
 <meta property="og:site_name" content="Mr.Wen">
-<meta property="og:description" content="To strive, to seek, to find, and not to yield">
+<meta property="og:description" content="最近开发遇到一个需求，就是要从手机客户端通过云信IM发送文件，最开始想到的是通过云信发送文件是没有问题的，但似乎获取从手机获取文件没那么方便，安卓手机是可以轻松去选取系统文件，iOS相对没那么开放，但这也是iOS相比安卓安全的原因之一。除了系统开发的图片文件和视频文件，就不能获取其他格式文件吗？答案是否定的，自己留意了微信，发现有发送文件功能，微信点击发送文件，就会跳转到一个系统提供的文件拾取界面">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-06T15:17:20.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr.Wen">
-<meta name="twitter:description" content="To strive, to seek, to find, and not to yield">
+<meta name="twitter:title" content="iOS 文件获取与选择">
+<meta name="twitter:description" content="最近开发遇到一个需求，就是要从手机客户端通过云信IM发送文件，最开始想到的是通过云信发送文件是没有问题的，但似乎获取从手机获取文件没那么方便，安卓手机是可以轻松去选取系统文件，iOS相对没那么开放，但这也是iOS相比安卓安全的原因之一。除了系统开发的图片文件和视频文件，就不能获取其他格式文件吗？答案是否定的，自己留意了微信，发现有发送文件功能，微信点击发送文件，就会跳转到一个系统提供的文件拾取界面">
 
 
 
@@ -140,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://blogwenbo.com/tags/Shadowsocks/"/>
+  <link rel="canonical" href="http://blogwenbo.com/2018/11/06/iOS-文件获取与选择/"/>
 
 
 
 
 
-  <title>标签: Shadowsocks | Mr.Wen</title>
+  <title>iOS 文件获取与选择 | Mr.Wen</title>
   
 
 
@@ -165,7 +167,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 <a href="https://github.com/wenmobo" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -313,54 +315,325 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Shadowsocks<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blogwenbo.com/2018/11/06/iOS-文件获取与选择/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.Wen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://upload.jianshu.io/users/upload_avatars/3072214/ccbcba49-0a5c-4b7e-b1e4-aea15ab4419f.png?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.Wen">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/07/08/item2自动连接SSH/" itemprop="url">
-              
-                <span itemprop="name">item2自动连接SSH</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">iOS 文件获取与选择</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-08T17:06:49+08:00"
-              content="2018-07-08" >
-          07-08
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-06T22:26:54+08:00">
+                2018-11-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/11/06/iOS-文件获取与选择/" class="leancloud_visitors" data-flag-title="iOS 文件获取与选择">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span><span>℃</span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,116
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  最近开发遇到一个需求，就是要从手机客户端通过云信IM发送文件，最开始想到的是通过云信发送文件是没有问题的，但似乎获取从手机获取文件没那么方便，安卓手机是可以轻松去选取系统文件，iOS相对没那么开放，但这也是iOS相比安卓安全的原因之一。除了系统开发的图片文件和视频文件，就不能获取其他格式文件吗？答案是否定的，自己留意了微信，发现有发送文件功能，微信点击发送文件，就会跳转到一个系统提供的文件拾取界面。自己从前也没有接触过，查阅了相关资料，自己也做下记录，下面开始介绍iOS获取文件的几种方式吧！
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p class="description"></p>
+
+<a id="more"></a>
+<h3 id="一、需求分析"><a href="#一、需求分析" class="headerlink" title="一、需求分析"></a>一、需求分析</h3><blockquote>
+<p>最近开发遇到一个需求，就是要从手机客户端通过云信IM发送文件，最开始想到的是通过云信发送文件是没有问题的，但似乎获取从手机获取文件没那么方便，安卓手机是可以轻松去选取系统文件，iOS相对没那么开放，但这也是iOS相比安卓安全的原因之一。除了系统开发的图片文件和视频文件，就不能获取其他格式文件吗？答案是否定的，自己留意了微信，发现有发送文件功能，微信点击发送文件，就会跳转到一个系统提供的文件拾取界面。自己从前也没有接触过，查阅了相关资料，自己也做下记录，下面开始介绍iOS获取文件的几种方式吧！</p>
+</blockquote>
+<h3 id="二、通过WBUIDocumentPickerController拾取"><a href="#二、通过WBUIDocumentPickerController拾取" class="headerlink" title="二、通过WBUIDocumentPickerController拾取"></a>二、通过<strong>WBUIDocumentPickerController</strong>拾取</h3><ul>
+<li>iOS 新增的文件拾取类，API也比较的简单，通过简单的几句代码就可以实现文件拾取功能</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">UIDocumentPickerViewController *documentPickerViewController = [[UIDocumentPickerViewController alloc]initWithDocumentTypes:self.documentTypes</span><br><span class="line">                                                                                                                         inMode:UIDocumentPickerModeOpen];</span><br><span class="line">    documentPickerViewController.delegate = self;</span><br><span class="line">    [self presentViewController:documentPickerViewController</span><br><span class="line">                       animated:YES</span><br><span class="line">                     completion:nil];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建的时候需传入类型，更多UTI类型可到苹果官网查看：<a href="https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html#//apple_ref/doc/uid/TP40009259-SW1" target="_blank" rel="noopener">https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html#//apple_ref/doc/uid/TP40009259-SW1</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">- (NSArray *)documentTypes &#123;</span><br><span class="line">    if (!_documentTypes) &#123;</span><br><span class="line">        _documentTypes = @[@&quot;public.content&quot;,</span><br><span class="line">                           @&quot;public.text&quot;,</span><br><span class="line">                           @&quot;public.source-code&quot;,</span><br><span class="line">                           @&quot;public.image&quot;,</span><br><span class="line">                           @&quot;public.audiovisual-content&quot;,</span><br><span class="line">                           @&quot;com.adobe.pdf&quot;,</span><br><span class="line">                           @&quot;com.apple.keynote.key&quot;,</span><br><span class="line">                           @&quot;com.microsoft.word.doc&quot;,</span><br><span class="line">                           @&quot;com.microsoft.excel.xls&quot;,</span><br><span class="line">                           @&quot;com.microsoft.powerpoint.ppt&quot;,</span><br><span class="line">                           @&quot;public.rtf&quot;,</span><br><span class="line">                           @&quot;public.html&quot;,</span><br><span class="line">                           @&quot;&quot;];</span><br><span class="line">    &#125;</span><br><span class="line">    return _documentTypes;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>代理方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// MARK:UIDocumentPickerDelegate</span><br><span class="line">/*  &lt; iOS 11 API &gt; */</span><br><span class="line">- (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray&lt;NSURL *&gt; *)urls &#123;</span><br><span class="line">    NSLog(@&quot;%s&quot;,__func__);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*  &lt; iOS 8 API &gt; */</span><br><span class="line">- (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentAtURL:(NSURL *)url &#123;</span><br><span class="line">    NSLog(@&quot;%s&quot;,__func__);</span><br><span class="line">    </span><br><span class="line">    NSArray *array = [[url absoluteString] componentsSeparatedByString:@&quot;/&quot;];</span><br><span class="line">    NSString *fileName = [array lastObject];</span><br><span class="line">    fileName = [fileName stringByRemovingPercentEncoding];</span><br><span class="line">    </span><br><span class="line">    if ([WBiCloudManager iCloudEnable]) &#123;</span><br><span class="line">        [WBiCloudManager wb_downloadWithDocumentURL:url</span><br><span class="line">                                     completedBlock:^(id obj) &#123;</span><br><span class="line">                                         NSData *data = obj;</span><br><span class="line">                                         NSString *path = [NSHomeDirectory() stringByAppendingString:[NSString stringWithFormat:@&quot;/Documents/%@&quot;,fileName]];</span><br><span class="line">                                         /*  &lt; 写入沙盒 &gt; */</span><br><span class="line">                                         [data writeToFile:path</span><br><span class="line">                                                atomically:YES];</span><br><span class="line">                                     &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)documentPickerWasCancelled:(UIDocumentPickerViewController *)controller &#123;</span><br><span class="line">    NSLog(@&quot;%s&quot;,__func__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：我们从文件拾取器选择了一个文件，有可能这个文件还没有从iCloud同步到本地，这时我们需要子类化一个<strong>UIDocument</strong>对象，去做文件相关的操作，在使用前还需判断是否开启iCloud服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//如果url不为空，说明可以使用iCloud相关功能api</span><br><span class="line">+ (NSURL *)iCloudURLForIdentifier:(NSString *)identifier &#123;</span><br><span class="line">    NSURL *url = nil;</span><br><span class="line">    NSFileManager *fileManager = [NSFileManager defaultManager];</span><br><span class="line">    url = [fileManager URLForUbiquityContainerIdentifier:identifier];</span><br><span class="line">    return url;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于<strong>WBUIDocumentPickerController</strong>的使用，我写了一个详细的demo，在文章末尾我也为贴出GitHub地址。</p>
+<h3 id="三、UIDocumentBrowserViewController"><a href="#三、UIDocumentBrowserViewController" class="headerlink" title="三、UIDocumentBrowserViewController"></a>三、UIDocumentBrowserViewController</h3><blockquote>
+<p>Important</p>
+<p>Always assign the document browser as your app’s root view controller. Don’t place the document browser in a navigation controller, tab bar, or split view, and don’t present the document browser modally.</p>
+<p>If you want to present a document browser from another location in your view hierarchy, use a <a href="https://developer.apple.com/documentation/uikit/uidocumentpickerviewcontroller?language=objc" target="_blank" rel="noopener"><code>UIDocumentPickerViewController</code></a> instead.</p>
+</blockquote>
+<p>iOS 11新出的API，用来浏览本地系统文件，iCloud文件。一般的项目可能用不到这个类，使用的时候注意遵循官方文档说明，将UIDocumentPickerViewController设置为窗口根控制器。这里也不做过多说明了，自己也写了个小demo，感兴趣的朋友可下载demo查看。</p>
+<h3 id="四、通过三方APP拷贝文件到自己的项目"><a href="#四、通过三方APP拷贝文件到自己的项目" class="headerlink" title="四、通过三方APP拷贝文件到自己的项目"></a>四、通过三方APP拷贝文件到自己的项目</h3><p>通过这种方式获取文件，之前自己已经接触过了，比如像QQ，微信打开一个文件选择用自己的APP打开，自己APP先要在 <strong>info.plist</strong>中配置支持文件类型，然后就能将文件拷贝到自己的项目，主要用到的方法是<strong>AppDelegate</strong>中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary&lt;UIApplicationOpenURLOptionsKey,id&gt; *)options &#123;</span><br><span class="line">    NSLog(@&quot;url  %@&quot;,[url absoluteString]);</span><br><span class="line">    </span><br><span class="line">    /*  &lt; 三方App拷贝到自己App处理 &gt; */</span><br><span class="line">    if ([[url absoluteString] containsString:@&quot;file&quot;]) &#123;</span><br><span class="line">        NSArray *array = [[url absoluteString] componentsSeparatedByString:@&quot;/&quot;];</span><br><span class="line">        NSString *fileName = [array lastObject];</span><br><span class="line">        fileName = [fileName stringByRemovingPercentEncoding];</span><br><span class="line">        </span><br><span class="line">        NSString *path = [NSHomeDirectory() stringByAppendingString:[NSString stringWithFormat:@&quot;/Documents/Inbox/%@&quot;,fileName]];</span><br><span class="line">        </span><br><span class="line">        NSData *data = [NSData dataWithContentsOfFile:path];</span><br><span class="line">    &#125;</span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h3><blockquote>
+<p>自己暂时了解到的文件获取方式就这些了，以后有新的方式再做补充吧，文章如果有描述不对的地方还请批评指正，如果你有更多更好的方式，欢迎一起交流学习。既然有发送文件，就会有预览文件，接下来我也会写一篇文件预览的文章。好了，最后贴出demo地址吧！</p>
+</blockquote>
+<h3 id="六、Demo"><a href="#六、Demo" class="headerlink" title="六、Demo"></a>六、Demo</h3><p><a href="https://github.com/wenmobo/WBDocumentBrowserDemo" target="_blank" rel="noopener">WBDocumentBrowserDemo</a></p>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>1、<a href="https://developer.apple.com/documentation/uikit/view_controllers/adding_a_document_browser_to_your_app?language=objc" target="_blank" rel="noopener">https://developer.apple.com/documentation/uikit/view_controllers/adding_a_document_browser_to_your_app?language=objc</a></p>
+<p>2、<a href="https://developer.apple.com/documentation/uikit/view_controllers/building_a_document_browser-based_app?language=objc" target="_blank" rel="noopener">https://developer.apple.com/documentation/uikit/view_controllers/building_a_document_browser-based_app?language=objc</a></p>
+<p>3、<a href="https://www.jianshu.com/p/1d07fab48e67" target="_blank" rel="noopener">iOS - 从iCloud，QQ，微信获取文件</a></p>
 
       
     </div>
+    
+    
+    
 
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+
+<div>
+      
+        
+      
+</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"><i class="fa fa-tag"></i> iOS</a>
+          
+            <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
+          
+            <a href="/tags/iCloud/" rel="tag"><i class="fa fa-tag"></i> iCloud</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+<div style="color: rgba(0, 0, 0, 0.75); font-size:13px; letter-spacing:3px">(&gt;看完记得五星好评哦亲&lt;)</div>
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/04/iOS-APP瘦身实践/" rel="next" title="iOS APP瘦身实践">
+                <i class="fa fa-chevron-left"></i> iOS APP瘦身实践
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+      <!--MOB SHARE BEGIN-->
+<div class="-hoofoo-share-title">分享到：</div>
+<div class="-hoofoo-share-buttons">
+    <div class="-mob-share-weibo -hoofoo-share-weibo -hoofoo-share-ui-button"><i class="fa fa-weibo" aria-hidden="true"></i></div>
+    <div class="-mob-share-weixin -hoofoo-share-weixin -hoofoo-share-ui-button"><i class="fa fa-weixin" aria-hidden="true"></i></div>
+    <div class="-mob-share-qq -hoofoo-share-qq -hoofoo-share-ui-button"><i class="fa fa-qq" aria-hidden="true"></i></div>
+    <div class="-mob-share-twitter -hoofoo-share-twitter -hoofoo-share-ui-button"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+    <div class="-hoofoo-share-more -hoofoo-share-ui-button -mob-share-open"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+</div>
+<div class="-mob-share-ui" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+        <li class="-mob-share-weixin"><p>微信</p></li>
+        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+        <li class="-mob-share-qq"><p>QQ好友</p></li>
+        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+        <li class="-mob-share-renren"><p>人人网</p></li>
+        <li class="-mob-share-kaixin"><p>开心网</p></li>
+        <li class="-mob-share-douban"><p>豆瓣</p></li>
+        <li class="-mob-share-youdao"><p>有道云笔记</p></li>
+        <li class="-mob-share-mingdao"><p>明道</p></li>
+        <li class="-mob-share-pengyou"><p>朋友网</p></li>
+        <li class="-mob-share-facebook"><p>Facebook</p></li>
+        <li class="-mob-share-twitter"><p>Twitter</p></li>
+        <li class="-mob-share-pocket"><p>Pocket</p></li>
+        <li class="-mob-share-google"><p>Google+</p></li>
+        <li class="-mob-share-tumblr"><p>Tumblr</p></li>
+        <li class="-mob-share-instapaper"><p>Instapaper</p></li>
+        <li class="-mob-share-linkedin"><p>Linkedin</p></li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=26bd318095f14"></script>
+<!--MOB SHARE END-->
+
+    </div>
+  </div>
 
 
           </div>
@@ -368,6 +641,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzQyMy85OTc5"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -390,8 +672,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -534,6 +825,22 @@ show_date_time();
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、需求分析"><span class="nav-number">1.</span> <span class="nav-text">一、需求分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、通过WBUIDocumentPickerController拾取"><span class="nav-number">2.</span> <span class="nav-text">二、通过WBUIDocumentPickerController拾取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、UIDocumentBrowserViewController"><span class="nav-number">3.</span> <span class="nav-text">三、UIDocumentBrowserViewController</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、通过三方APP拷贝文件到自己的项目"><span class="nav-number">4.</span> <span class="nav-text">四、通过三方APP拷贝文件到自己的项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、结语"><span class="nav-number">5.</span> <span class="nav-text">五、结语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、Demo"><span class="nav-number">6.</span> <span class="nav-text">六、Demo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">7.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -700,6 +1007,10 @@ show_date_time();
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -728,6 +1039,17 @@ show_date_time();
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1179,6 +1501,23 @@ show_date_time();
 
   
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 12509,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
 
